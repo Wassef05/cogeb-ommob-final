@@ -1,0 +1,115 @@
+/* Styles généraux pour tous les écrans */
+@font-face {
+  font-family: 'Deutschlands';
+  src: url('../../img/fonts/Deutschlands.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.deutschlands-font {
+  font-family: 'Deutschlands', cursive;
+}
+
+.textDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; 
+  text-align: center;
+}
+
+.textDiv h1 {
+  color: #3d3d3d; 
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 4rem;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.cursor {
+  animation: blink 1s step-end infinite;
+}
+
+@media (max-width: 639px) {
+  .covercard {
+    position: relative;
+    width: 120%;
+    height: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; 
+    padding-bottom: 0; 
+    margin-left: -15px;
+  }
+  .textDiv h1 {
+    color: #3d3d3d; 
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 4rem;
+  }
+  .slogan-container {
+    width: 90%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.85); 
+  }
+
+  .mobile-slogan {
+    font-size: 1.25rem; 
+    line-height: 1.75rem; 
+  }
+
+  .textDiv {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Styles pour tablette */
+@media (min-width: 640px) and (max-width: 767px) {
+  .textDiv h1 {
+    font-size: 2rem; 
+    line-height: 3rem;
+  }
+
+  .slogan-container {
+    width: 80%;
+  }
+
+  .bg-[#fff]/40 {
+    background: rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* Styles pour desktop */
+@media (min-width: 768px) {
+  .covercard {
+    position: absolute;
+    bottom: 60px;
+    left: -20px;
+    width: 70%;
+    margin-left: -27px;
+
+  }
+
+  .slogan-container {
+    width: 35%; 
+    margin-bottom: -120px;
+    background: rgba(255, 255, 255, 0.4); 
+    
+  }
+
+  .textDiv h1 {
+    font-size: 2.5rem; 
+    line-height: 4rem;
+    
+  }
+}
