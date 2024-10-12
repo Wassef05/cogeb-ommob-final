@@ -1,0 +1,147 @@
+/* Style général pour l'image de couverture */
+.custom-slide {
+  background-size: cover; /* Utilisation de 'cover' pour s'adapter à l'écran */
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* La hauteur de l'écran complète */
+  position: relative; /* Important pour que le texte soit positionné au-dessus */
+  z-index: 1; /* Assurez-vous que l'image est en dessous du texte */
+}
+
+/* --- MEDIA QUERIES --- */
+
+/* Styles pour les petits écrans (mobile) */
+@media (max-width: 640px) {
+  .custom-slide {
+    height: 190vh; /* Adapter la hauteur pour mobile */
+    background-size: 150%;
+    margin-top: -20%;
+  }
+}
+
+/* Styles pour les tablettes */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .custom-slide {
+    height: 70vh; /* Ajustement pour tablette */
+    background-size: cover; /* S'adapte à la taille */
+  }
+}
+
+/* Styles pour les grands écrans (desktop) */
+@media (min-width: 1025px) {
+  .custom-slide {
+    height: 100vh; /* Pleine hauteur sur desktop */
+    background-size: cover; /* S'adapte à la taille */
+  }
+}
+
+/* --- Police personnalisée --- */
+@font-face {
+  font-family: 'Deutschlands';
+  src: url('../../img/fonts/Deutschlands.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Appliquer la police Deutschlands */
+.deutschlands-font {
+  font-family: 'Deutschlands', cursive;
+}
+
+/* Style pour le conteneur du texte du slogan */
+.slogan-container {
+  position: absolute;
+  bottom: 0; /* Ajuster selon la hauteur désirée */
+  left: 0; /* Ajuster la position par rapport à l'écran */
+  max-width: 80%; /* Limite la largeur pour ne pas qu'il prenne trop de place */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.7); /* Fond semi-transparent */
+  border-radius: 0 30% 0 0; 
+  /* border-top-right-radius: 10%; */
+  z-index: 10; /* Assurez-vous que le conteneur est au-dessus de l'image */
+  backdrop-filter: blur(1px); /* Ajout d'un effet de flou */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Optionnel : une légère ombre pour détacher le fond */
+
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center
+
+}
+
+/* Style pour le texte du slogan */
+.slogan-text {
+  font-family: 'Deutschlands', cursive;
+  color: #333; /* Texte sombre pour contraste avec le fond blanc */
+  font-size: 1rem;
+  text-align: center; /* Centrer le texte */
+  text-shadow: none; /* Retrait de l'ombre du texte */
+}
+
+.cursor {
+  display: inline-block; /* Permet au curseur de se déplacer avec le texte */
+  color: rgb(254, 148, 41); /* Couleur du curseur */
+  /* Pas d'animation de clignotement */
+}
+
+
+
+/* --- Responsiveness pour la taille du texte --- */
+@media (max-width: 320px) {
+  .slogan-text {
+    font-size: 1rem;
+  }
+  .slogan-container {
+    width: 70%;
+    margin-bottom: 60%;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 375px) {
+  .slogan-text {
+    font-size: 1.2rem;
+  }
+  .slogan-container {
+    width: 70%;
+    margin-bottom: 40%;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 425px) {
+  .slogan-text {
+    font-size: 1rem;
+  }
+  .slogan-container {
+    width: 50%;
+    margin-bottom: 40%;
+  }
+
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+  .slogan-text {
+    font-size: 1.3rem;
+  }
+  .slogan-container {
+    width: 60%;
+    margin-bottom: 30%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .slogan-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .slogan-text {
+    font-size: 1.9rem;
+  }
+}
+
+@media (min-width: 1441px) {
+  .slogan-text {
+    font-size: 2.8rem;
+  }
+}

@@ -27,12 +27,12 @@ export default function CoverCard() {
 
   return (
     <div className="covercard">
-     <div
-  className="p-1 w-3/4 md:w-1/2 sm:p-0 md:p-12 -mt-20 md:-mt-0 ml-2 md:ml-12 bg-[#fff]/50 rounded-lg slogan-container" 
-  style={{ borderTopRightRadius: '50px'}} 
->
+      <div
+        className="p-1 w-3/4 md:w-1/2 sm:p-0 md:p-12 -mt-20 md:-mt-0 ml-2 md:ml-12 bg-[#fff]/50 rounded-lg slogan-container"
+        style={{ borderTopRightRadius: '50px', height: '150px' }} 
+      >
         <div className="textDiv text-center">
-          <h1 className="deutschlands-font text-bright mobile-slogan">
+          <h1 className="deutschlands-font text-bright mobile-slogan fixed-height-text">  {/* Classe pour hauteur fixe */}
             <span className="baraka">
               {text.split('\n').map((line, index) => (
                 <React.Fragment key={index}>
