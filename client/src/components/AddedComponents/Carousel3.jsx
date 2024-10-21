@@ -11,21 +11,53 @@ const Projects = () => {
     const navigate = useNavigate()
 
 
-    function SampleNextArrow(props) {
-        const { className, style, onClick } = props;
-        return (
-          <div
-            className={className}
-            style={{
-              ...style,
-              display: "block",
-              backgroundColor: "rgb(173, 170, 170)",
-              borderRadius: "40px",
-            }}
-            onClick={onClick}
-          />
-        );
-      }
+  // Flèche suivante
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{
+          ...style,
+          display: "block",
+          backgroundColor: "rgba(0, 0, 0, 0.2)",
+          borderRadius: "50%",
+          width: "22px",
+          height: "18px",
+          position: "absolute",
+          top: "50%",
+          transform: "translateY(-50%)",
+          right: "-15px", // Ajuste la flèche de droite
+          zIndex: 1, // S'assure qu'elle reste au-dessus des cartes
+        }}
+        onClick={onClick}
+      />
+    );
+  }
+
+  // Flèche précédente
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{
+          ...style,
+          display: "block",
+          backgroundColor: "rgba(0, 0, 0, 0.2)",
+          borderRadius: "50%",
+          width: "22px",
+          height: "18px",
+          position: "absolute",
+          top: "50%",
+          transform: "translateY(-50%)",
+          left: "-15px", // Ajuste la flèche de gauche
+          zIndex: 1, // S'assure qu'elle reste au-dessus des cartes
+        }}
+        onClick={onClick}
+      />
+    );
+  }
 
        useEffect(() => {
         (async () => {
@@ -52,7 +84,7 @@ const Projects = () => {
         slidesToShow: 4,
         slidesToScroll: 1,
         nextArrow: <SampleNextArrow />,
-        prevArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />,
         autoplay: true,
         autoplaySpeed: 2000,
         appendDots: dots => (
@@ -118,10 +150,11 @@ const Projects = () => {
 
                 <div className="btn_container flex items-center justify-center " >
                     <button
-                        className="group relative inline-flex items-center overflow-hidden rounded bg-[#3A5A40] px-8 py-3 text-white "
+                        className="group relative inline-flex items-center overflow-hidden rounded bg-[#3A5A40] px-8 py-3 text-black "
                         style={{
-                            background: "linear-gradient(270deg, #B88824 0%, #E1C550 39%, #CEA93B 74%, #B07A12 100%)"
-                          }}
+                          background:
+                            "linear-gradient(90deg, rgba(123,231,26,1) 0%, rgba(90,225,80,0.5) 50%, rgba(123,231,26,1) 100%)",
+                        }}
                         onClick={() => navigate('/searchProject?')}
                         >
                         <span className="absolute -end-full transition-all group-hover:end-4">
@@ -144,7 +177,7 @@ const Projects = () => {
                         <span className="text-sm font-medium transition-all  group-hover:me-4"  >
                         Voir plus
                         </span>
-                    </button>
+                    </button> 
                 </div>
 
             </div>

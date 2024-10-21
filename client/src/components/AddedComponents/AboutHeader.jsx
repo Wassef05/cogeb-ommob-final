@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import cover from "../../img/cover1.jpg";
+import{cover1jpg}  from "../../img";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import StateCard from "./StateCardAbout";
@@ -17,24 +17,14 @@ const AboutHeader = () => {
     <div>
       <div className="relative h-[80vh] font-sans before:absolute before:w-full before:h-full before:inset-0  before:opacity-50 before:z-10">
         <img
-          src={cover}
+          src={cover1jpg}
           alt="contact cover"
           className="absolute inset-0 w-full h-full object-cover"
         />
 
-        <div
-          className="min-h-[350px] relative z-20 h-full max-w-6xl mx-auto flex flex-col justify-center items-center text-center text-black p-6"
-          data-aos="fade-down"
-        >
-          <h2 className="sm:text-4xl uppercase text-3xl font-bold mb-6">
-            A propos
-          </h2>
-        </div>
       </div>
 
-      {/* Container for the StateCard */}
       <div className="relative z-20 -mt-24 mb-16 flex justify-center items-center">
-        {/* Adjust -mt-24 for the vertical placement above the image */}
         <StateCard />
       </div>
 

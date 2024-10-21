@@ -1,11 +1,11 @@
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { Navbar } from "flowbite-react";
 import { useState, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 
-import logo from '../img/logo.png';
-import Hamburger from '../img/hamburgerMenu.svg';
-import Close from '../img/close.svg';
+import {logo} from '../img';
+import {hamburgerMenu} from '../img';
+import {close} from '../img';
 
 export default function NavbarComp() {
   const [toggle, setToggle] = useState(false);
@@ -25,6 +25,8 @@ export default function NavbarComp() {
     setToggle(false);
     setIsDropdownOpen(false);
   };
+
+  const location = useLocation(); // Hook pour obtenir la route actuelle
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,11 +75,19 @@ export default function NavbarComp() {
     };
   }, [dropdownRef]);
 
-  const navlinkStyles = `
-    text-black font-bold text-md sm:text-lg md:text-sm lg:text-xl md:mx-1 lg:mx-8 my-3 
-    transform translate-y-2 hover:text-[#006400] 
-    hover:border hover:border-solid hover:border-[#FF8C00] hover:rounded-lg hover:p-0
+  // Fonction pour appliquer des styles dynamiques, y compris pour les éléments du dropdown
+  const navlinkStyles = ({ isActive }) => `
+    text-black font-bold text-md sm:text-lg md:text-sm lg:text-xl md:mx-1 lg:mx-8 my-3
+    transform translate-y-2 ${isActive ? 'text-green-600' : 'hover:text-[#006400]'} 
+      hover:rounded-lg hover:p-0
   `;
+
+  const dropdownLinkStyles = ({ isActive }) => `
+    block px-4 py-2 ${isActive ? 'text-green-600' : 'hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white'}
+  `;
+
+  // Vérifier si l'une des routes du dropdown "NOS PROJETS" est active
+  const isNosProjetsActive = location.pathname.includes('/searchProject');
 
   return (
     <Navbar
@@ -89,7 +99,7 @@ export default function NavbarComp() {
         <Navbar.Brand href="/">
           <img
             src={logo}
-            className={`fixed mr-3 h-20 mt-6 sm:h-36 md:h-40 lg:h-24 ml-6 transition-transform duration-300 ${scrollPosition > 0 ? 'translate-y-0' : 'mt-0'}`}
+            className={`relative mr-3 h-16 sm:h-32 md:h-28 lg:h-20 ml-10 transition-transform duration-300 ${scrollPosition > 0 ? 'scale-90' : 'scale-100'}`} // Adjust height and scaling
             alt="nom"
           />
         </Navbar.Brand>
@@ -104,7 +114,7 @@ export default function NavbarComp() {
           )}
 
           <button className="block md:hidden m-4" onClick={handleToggle}>
-            <img src={toggle ? Close : Hamburger} alt="menu" className="h-16 w-6 " />
+            <img src={toggle ? close : hamburgerMenu} alt="menu" className="h-16 w-6 " />
           </button>
         </div>
 
@@ -113,7 +123,7 @@ export default function NavbarComp() {
             ACCUEIL
           </NavLink>
 
-          <NavLink className={navlinkStyles} to="/about" onClick={handleLinkClick}>
+          <NavLink className={navlinkStyles} to="/apropos" onClick={handleLinkClick}>
             A PROPOS
           </NavLink>
 
@@ -124,7 +134,7 @@ export default function NavbarComp() {
             ref={dropdownRef}
           >
             <span
-              className={`${navlinkStyles} flex items-center cursor-pointer`}
+              className={`${navlinkStyles({ isActive: isNosProjetsActive })} flex items-center cursor-pointer`}
               onClick={handleDropdownToggle}
             >
               NOS PROJETS
@@ -143,31 +153,31 @@ export default function NavbarComp() {
               <div className="absolute z-50 bg-white divide-y divide-gray-100 rounded-lg shadow w-72 dark:bg-gray-700">
                 <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
                   <li>
-                    <Link
+                    <NavLink
                       to="/searchProject?filter=terminee"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      className={dropdownLinkStyles}
                       onClick={handleLinkClick}
                     >
                       Projets Réalisés
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link
+                    <NavLink
                       to="/searchProject?filter=en cours"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      className={dropdownLinkStyles}
                       onClick={handleLinkClick}
                     >
                       Projet En Cours
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link
+                    <NavLink
                       to="/searchProject?filter=future"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      className={dropdownLinkStyles}
                       onClick={handleLinkClick}
                     >
-                      Futures projets
-                    </Link>
+                      Futures Projets
+                    </NavLink>
                   </li>
                 </ul>
               </div>

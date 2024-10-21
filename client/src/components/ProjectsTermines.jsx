@@ -11,6 +11,7 @@ const TermineeProjects = () => {
   const [projectslistings, setprojectslistings] = useState([]);
   const navigate = useNavigate();
 
+  // Flèche suivante
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -19,8 +20,39 @@ const TermineeProjects = () => {
         style={{
           ...style,
           display: "block",
-          backgroundColor: "rgb(173, 170, 170)",
-          borderRadius: "40px",
+          backgroundColor: "rgba(0, 0, 0, 0.2)",
+          borderRadius: "50%",
+          width: "22px",
+          height: "18px",
+          position: "absolute",
+          top: "50%",
+          transform: "translateY(-50%)",
+          right: "-15px", // Ajuste la flèche de droite
+          zIndex: 1, // S'assure qu'elle reste au-dessus des cartes
+        }}
+        onClick={onClick}
+      />
+    );
+  }
+
+  // Flèche précédente
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{
+          ...style,
+          display: "block",
+          backgroundColor: "rgba(0, 0, 0, 0.2)",
+          borderRadius: "50%",
+          width: "22px",
+          height: "18px",
+          position: "absolute",
+          top: "50%",
+          transform: "translateY(-50%)",
+          left: "-15px", // Ajuste la flèche de gauche
+          zIndex: 1, // S'assure qu'elle reste au-dessus des cartes
         }}
         onClick={onClick}
       />
@@ -28,7 +60,7 @@ const TermineeProjects = () => {
   }
 
   useEffect(() => {
-    AOS.init({ duration: 1000 }); 
+    AOS.init({ duration: 1000 });
   }, []);
 
   useEffect(() => {
@@ -56,8 +88,8 @@ const TermineeProjects = () => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SampleNextArrow />,
+    nextArrow: <SampleNextArrow />, // Utilise la flèche suivante ajustée
+    prevArrow: <SamplePrevArrow />, // Utilise la flèche précédente ajustée
     autoplay: true,
     autoplaySpeed: 2000,
     appendDots: (dots) => (
@@ -111,7 +143,7 @@ const TermineeProjects = () => {
             className="text-xl  sm:text-3xl font-bold  text-[#515557] sm:text-left "
             data-aos="fade-down"
           >
-            NOS PROJETS REALISÉS
+            NOS PROJETS RÉALISÉS
           </h2>
         </div>
 
@@ -131,13 +163,31 @@ const TermineeProjects = () => {
               <div className="text-center pt-6" data-aos="fade-up" data-aos-delay="200">
                 <button
                   onClick={() => navigate("/searchProject?filter=terminee")}
-                  className="uppercase items-center px-4 py-3 text-lg font-medium text-center text-white rounded-lg focus:ring-4 focus:outline-none focus:ring-blue-300"
+                  className="group relative inline-flex items-center overflow-hidden rounded bg-[#3A5A40] px-8 py-3 text-black "
                   style={{
                     background:
-                      "linear-gradient(270deg, #B88824 0%, #E1C550 39%, #CEA93B 74%, #B07A12 100%)",
+                      "linear-gradient(104deg, rgba(2,164,34,1) 0%, rgba(144,226,160,1) 40%, rgba(142,245,162,0.9445028011204482) 55%, rgba(2,164,34,1) 100%)",
                   }}
                 >
-                  voir plus
+                  <span className="absolute -end-full transition-all group-hover:end-4">
+                    <svg
+                      className="h-5 w-5 rtl:rotate-180"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </span>
+                  <span className="text-xl transition-all group-hover:me-6">
+                    Voir plus
+                  </span>
                 </button>
               </div>
             </div>

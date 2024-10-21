@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 import { BiSolidArea } from "react-icons/bi";
+import { FaArrowLeft } from "react-icons/fa";
 import {
   FaLocationArrow,
   FaBed,
@@ -156,6 +157,22 @@ const ProjectPage = () => {
         <div className="listing_section pb-16">
           <div className="w-full h-32 "></div>
 
+              {/* Back Button */}
+              <div className="container mb-4">
+  <button
+    onClick={() => navigate(-1)}
+    className="flex items-center hover:bg-[#3A5A40]/90 text-black px-6 py-2 rounded-md font-heading"
+    style={{
+      background:
+        "linear-gradient(90deg, rgba(123,231,26,1) 0%, rgba(90,225,80,0.5) 40%, rgba(123,331,36,1) 100%)",
+    }}
+  >
+    <FaArrowLeft className="mr-2" /> {/* Ajout de l'icône ici */}
+    Retour
+  </button>
+</div>
+
+
           <Slider {...settings} className="z-10 relative">
             {listings.imgUrl &&
               listings.imgUrl.map((listing, index) => (
@@ -176,10 +193,17 @@ const ProjectPage = () => {
                       src={listing}
                       alt="image"
                     />
+
+                  //   <img
+                  //   className="h-[200px] sm:h-[650px] sm:w-[850px]  mx-auto rounded-lg rounded-b-lg"
+                  //   src={listing}
+                  //   alt="image"
+                  // />
                   )}
                 </div>
               ))}
           </Slider>
+          
 
           <div className="container ">
             <div className="property_details_container pt-4 sm:pt-12 ">

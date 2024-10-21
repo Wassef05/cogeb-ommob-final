@@ -11,6 +11,8 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import NavbarComp from './components/NavbarComp'
 import ErrorBoundary from './components/ErrorBoundary'; // Importer ErrorBoundary
+// import Album from './components/Album';
+
 
 
 function App() {
@@ -27,9 +29,11 @@ function App() {
           <Route path="/" element={<Homee />} />
           <Route path='/projects/:id' element={<ProjectPage />}/>
           <Route path='/searchProject?' element={<SearchProject />} />
+          {/* <Route path="/album" element={<Album />} /> */}
+
 
          
-        <Route path="/about" element={<About />} />
+        <Route path="/apropos" element={<About />} />
         <Route path="/contact" element={<Contact />} />
 
 

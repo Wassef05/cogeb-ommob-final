@@ -10,6 +10,7 @@ import TermineeProjects from "../components/ProjectsTermines";
 import EnCoursProjects from "../components/ProjectsEnCours";
 import StateCard from "../components/AddedComponents/StateCardAbout";
 import ProjetFuture from "../components/ProjetFuture";
+import Album from '../components/album';  
 import { useEffect } from 'react';
 import ErrorBoundary from '../components/ErrorBoundary'; 
 
@@ -34,17 +35,24 @@ function Homee() {
         <ErrorBoundary fallback={<p>Oops! Erreur dans Projet Futur</p>}>
           <ProjetFuture />
         </ErrorBoundary>
+        
+
+        
         <ErrorBoundary fallback={<p>Oops! Erreur dans Card2</p>}>
           <Card2 />
         </ErrorBoundary>
-        <ErrorBoundary fallback={<p>Oops! Erreur dans Card3</p>}>
-          <Card3 />
-        </ErrorBoundary>
+
         <ErrorBoundary fallback={<p>Oops! Erreur dans Carousel</p>}>
           <Carousel />
         </ErrorBoundary>
+        <ErrorBoundary fallback={<p>Oops! Erreur dans Album</p>}>
+          <Album /> 
+        </ErrorBoundary>
         <ErrorBoundary fallback={<p>Oops! Erreur dans StateCard</p>}>
           <StateCard />
+        </ErrorBoundary>
+        <ErrorBoundary fallback={<p>Oops! Erreur dans Card3</p>}>
+          <Card3 />
         </ErrorBoundary>
         <ErrorBoundary fallback={<p>Oops! Erreur dans Contact</p>}>
           <Contact />
