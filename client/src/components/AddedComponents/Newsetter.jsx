@@ -5,7 +5,7 @@ import 'aos/dist/aos.css';
 export default function Newsetter() {
   useEffect(() => {
     AOS.init({
-      duration: 1200, // Animation duration
+      duration: 1200,
     });
   }, []);
 

@@ -19,6 +19,8 @@ const AboutHeader = () => {
         <img
           src={cover1jpg}
           alt="contact cover"
+          loading="lazy" 
+
           className="absolute inset-0 w-full h-full object-cover"
         />
 

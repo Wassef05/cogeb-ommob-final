@@ -11,7 +11,6 @@ const Projects = () => {
     const navigate = useNavigate()
 
 
-  // Flèche suivante
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -27,15 +26,14 @@ const Projects = () => {
           position: "absolute",
           top: "50%",
           transform: "translateY(-50%)",
-          right: "-15px", // Ajuste la flèche de droite
-          zIndex: 1, // S'assure qu'elle reste au-dessus des cartes
+          right: "-15px", 
+          zIndex: 1,
         }}
         onClick={onClick}
       />
     );
   }
 
-  // Flèche précédente
   function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -51,8 +49,8 @@ const Projects = () => {
           position: "absolute",
           top: "50%",
           transform: "translateY(-50%)",
-          left: "-15px", // Ajuste la flèche de gauche
-          zIndex: 1, // S'assure qu'elle reste au-dessus des cartes
+          left: "-15px", 
+          zIndex: 1,
         }}
         onClick={onClick}
       />

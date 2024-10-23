@@ -5,18 +5,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
-import { BiSolidArea } from "react-icons/bi";
 import { FaArrowLeft } from "react-icons/fa";
-import {
-  FaLocationArrow,
-  FaBed,
-  FaBath,
-  FaAngleUp,
-  FaAngleDown,
-  FaShare,
-  FaLock,
-  FaBookmark,
-} from "react-icons/fa";
+import { FaLocationArrow, FaAngleUp, FaAngleDown } from "react-icons/fa";
 import Loading from "../components/Loading";
 import { useDispatch, useSelector } from "react-redux";
 import Footer from "../components/Footer";
@@ -30,23 +20,7 @@ const ProjectPage = () => {
   const [isFeatureActive, setIsFeatureActive] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const {
-    area,
-    address,
-    bath,
-    bed,
-    description,
-    specificity,
-    bureau,
-    Appartements,
-    furnished,
-    offer,
-    parking,
-    title,
-    type,
-    _id,
-    userRef,
-  } = listings;
+  const { address, description, specificity, title } = listings;
 
   const navigate = useNavigate();
   const params = useParams();
@@ -62,7 +36,9 @@ const ProjectPage = () => {
     window.scrollTo(0, 0);
     (async () => {
       setLoading(true);
-      const res = await fetch(`http://localhost:4000/api/projects/${params.id}`);
+      const res = await fetch(
+        `http://localhost:4000/api/projects/${params.id}`
+      );
       const json = await res.json();
       if (json.success === false) {
         toast.error(json.message, {
@@ -114,13 +90,15 @@ const ProjectPage = () => {
 
   const handleProjectDelete = async (projectId) => {
     try {
-      const res = await fetch(`http://localhost:4000/api/projects/${projectId}`, {
-        method: "DELETE",
-      });
+      const res = await fetch(
+        `http://localhost:4000/api/projects/${projectId}`,
+        {
+          method: "DELETE",
+        }
+      );
       const data = await res.json();
 
       if (data.success === false) {
-        
         toast.error(data.message, {
           autoClose: 2000,
         });
@@ -137,7 +115,7 @@ const ProjectPage = () => {
     if (typeof url === "string" && url.length > numChars) {
       return url.slice(0, -numChars);
     }
-    return url; 
+    return url;
   }
   function isMp4(fileName) {
     console.log(fileName);
@@ -156,22 +134,19 @@ const ProjectPage = () => {
       ) : (
         <div className="listing_section pb-16">
           <div className="w-full h-32 "></div>
-
-              {/* Back Button */}
-              <div className="container mb-4">
-  <button
-    onClick={() => navigate(-1)}
-    className="flex items-center hover:bg-[#3A5A40]/90 text-black px-6 py-2 rounded-md font-heading"
-    style={{
-      background:
-        "linear-gradient(90deg, rgba(123,231,26,1) 0%, rgba(90,225,80,0.5) 40%, rgba(123,331,36,1) 100%)",
-    }}
-  >
-    <FaArrowLeft className="mr-2" /> {/* Ajout de l'icône ici */}
-    Retour
-  </button>
-</div>
-
+          <div className="container mb-4">
+            <button
+              onClick={() => navigate(-1)}
+              className="flex items-center hover:bg-[#3A5A40]/90 text-black px-6 py-2 rounded-md font-heading"
+              style={{
+                background:
+                  "linear-gradient(90deg, rgba(123,231,26,1) 0%, rgba(90,225,80,0.5) 40%, rgba(123,331,36,1) 100%)",
+              }}
+            >
+              <FaArrowLeft className="mr-2" />
+              Retour
+            </button>
+          </div>
 
           <Slider {...settings} className="z-10 relative">
             {listings.imgUrl &&
@@ -192,18 +167,12 @@ const ProjectPage = () => {
                       className="h-[200px] sm:h-[450px]  mx-auto rounded-lg rounded-b-lg"
                       src={listing}
                       alt="image"
+                      loading="lazy"
                     />
-
-                  //   <img
-                  //   className="h-[200px] sm:h-[650px] sm:w-[850px]  mx-auto rounded-lg rounded-b-lg"
-                  //   src={listing}
-                  //   alt="image"
-                  // />
                   )}
                 </div>
               ))}
           </Slider>
-          
 
           <div className="container ">
             <div className="property_details_container pt-4 sm:pt-12 ">
@@ -211,8 +180,6 @@ const ProjectPage = () => {
                 <div className="lg:col-span-7  ">
                   <div className="bg-white md:p-12 p-6 rounded-md shadow-sm shadow-[#3A5A40]">
                     <div className="property_info">
-                  
-
                       <h1 className="font-heading font-bold mt-5 md:mt-8 text-2xl sm:text-3xl text-black capitalize">
                         {title}
                       </h1>
@@ -226,14 +193,12 @@ const ProjectPage = () => {
                           Description
                         </p>
                         <div
-                        className="description-content break-words"
+                          className="description-content break-words"
                           dangerouslySetInnerHTML={{ __html: description }}
                         />
                       </div>
                     </div>
                   </div>
-
-
                   <div
                     className={`property_details mt-8 bg-white rounded-md shadow-sm shadow-[#3A5A40] md:px-12 py-5 px-6 ${
                       currentUser && currentUser.role === "admin"
@@ -265,7 +230,7 @@ const ProjectPage = () => {
                     >
                       <div className="specificity">
                         <div
-                        className="specificity-content break-words"
+                          className="specificity-content break-words"
                           dangerouslySetInnerHTML={{ __html: specificity }}
                         />
                       </div>
@@ -273,63 +238,63 @@ const ProjectPage = () => {
                   </div>
                 </div>
                 <div className="lg:col-span-5">
-  <div className="bg-white md:p-12 p-6 rounded-md shadow-sm shadow-[#3A5A40]">
-    {currentUser && currentUser.role === "admin" ? (
-      <div className="project_owner">
-        <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-5 gap-2 ">
-          <div className="btn_container">
-            <button
-              onClick={() => navigate(`/update_project/${params.id}`)}
-              className="bg-[#3A5A40] hover:bg-[#3A5A40]/90 text-white w-full px-2 py-3 text-lg font-heading rounded-sm"
-            >
-              Modifier Project
-            </button>
-          </div>
-          <div className="contant_btn_container">
-            <button
-              onClick={() => handleProjectDelete(params.id)}
-              className="bg-red-600 hover:bg-red-600/90 text-white w-full px-2 py-3 text-lg font-heading rounded-sm"
-            >
-              Supprimer Project
-            </button>
-          </div>
-        </div>
-        <div className="contant_btn_container mt-3">
-          <button
-            onClick={() => navigate(`/profile`)}
-            className="bg-amber-700 hover:bg-amber-700/90 uppercase text-white w-full px-2 py-3 text-lg font-heading rounded-sm"
-          >
-            Tous les Projects
-          </button>
-        </div>
-      </div>
-    ) : (
-        <div className="feature_info transition-max-h max-h-screen overflow-hidden duration-500 ease-in-out">
-        <p className="font-heading text-lg sm:text-xl font-extrabold">
-          SPECIFICITÉ
-        </p>
-        <div className="info_contaier mt-5 max-w-md">
-  <div className="mt-4">
-    {specificity ? (
-      <div
-        className="font-heading text-md lg:text-lg specificity-content break-words"
-        
-        dangerouslySetInnerHTML={{ __html: specificity }}
-      />
-    ) : (
-      <p className="font-heading text-md lg:text-lg text-gray-500">
-        Aucune spécificité disponible
-      </p>
-    )}
-  </div>
-</div>
-
-      </div>
-      
-    )}
-  </div>
-</div>
-
+                  <div className="bg-white md:p-12 p-6 rounded-md shadow-sm shadow-[#3A5A40]">
+                    {currentUser && currentUser.role === "admin" ? (
+                      <div className="project_owner">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-5 gap-2 ">
+                          <div className="btn_container">
+                            <button
+                              onClick={() =>
+                                navigate(`/update_project/${params.id}`)
+                              }
+                              className="bg-[#3A5A40] hover:bg-[#3A5A40]/90 text-white w-full px-2 py-3 text-lg font-heading rounded-sm"
+                            >
+                              Modifier Project
+                            </button>
+                          </div>
+                          <div className="contant_btn_container">
+                            <button
+                              onClick={() => handleProjectDelete(params.id)}
+                              className="bg-red-600 hover:bg-red-600/90 text-white w-full px-2 py-3 text-lg font-heading rounded-sm"
+                            >
+                              Supprimer Project
+                            </button>
+                          </div>
+                        </div>
+                        <div className="contant_btn_container mt-3">
+                          <button
+                            onClick={() => navigate(`/profile`)}
+                            className="bg-amber-700 hover:bg-amber-700/90 uppercase text-white w-full px-2 py-3 text-lg font-heading rounded-sm"
+                          >
+                            Tous les Projects
+                          </button>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="feature_info transition-max-h max-h-screen overflow-hidden duration-500 ease-in-out">
+                        <p className="font-heading text-lg sm:text-xl font-extrabold">
+                          SPECIFICITÉ
+                        </p>
+                        <div className="info_contaier mt-5 max-w-md">
+                          <div className="mt-4">
+                            {specificity ? (
+                              <div
+                                className="font-heading text-md lg:text-lg specificity-content break-words"
+                                dangerouslySetInnerHTML={{
+                                  __html: specificity,
+                                }}
+                              />
+                            ) : (
+                              <p className="font-heading text-md lg:text-lg text-gray-500">
+                                Aucune spécificité disponible
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
           </div>

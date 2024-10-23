@@ -31,7 +31,6 @@ export default function Album() {
 
   return (
     <div className="py-16 bg-gray-100">
-      {/* Icons and descriptions section */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12 px-4">
         <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
           <FaMapMarkedAlt className="text-4xl sm:text-5xl mb-4 text-black" />
@@ -43,7 +42,6 @@ export default function Album() {
         </div>
       </div>
 
-      {/* Grid responsive with no gap between images */}
       <div className="max-w-9xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
         {photos.map((photo, index) => (
           <div key={index} className="relative">
@@ -52,15 +50,14 @@ export default function Album() {
               src={photo.src}
               alt={`Image ${index + 1}`}
               onClick={() => handleImageClick(index)}
+              loading="lazy"
             />
           </div>
         ))}
       </div>
 
-      {/* Modal to display larger image */}
       {selectedIndex !== null && (
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-8">
-          {/* Left arrow */}
           <button
             className="absolute left-0 text-white text-4xl p-2 hover:text-gray-400"
             onClick={handlePrev}
@@ -72,9 +69,9 @@ export default function Album() {
             className="max-w-full max-h-[80vh] object-contain"
             src={photos[selectedIndex].src}
             alt={`Image ${selectedIndex + 1}`}
+            loading="lazy"
           />
 
-          {/* Right arrow */}
           <button
             className="absolute right-0 text-white text-4xl p-2 hover:text-gray-400"
             onClick={handleNext}
@@ -82,7 +79,6 @@ export default function Album() {
             &#8594;
           </button>
 
-          {/* Close button */}
           <button
             className="absolute top-4 right-4 text-white text-2xl"
             onClick={handleClose}

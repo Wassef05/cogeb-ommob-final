@@ -12,7 +12,6 @@ import ProjectCard from '../components/ProjectCard.jsx';
 import Loading from '../components/Loading.jsx';
 import Footer from '../components/Footer.jsx';
 import { FaAngleDoubleLeft, FaAngleDoubleRight, FaSearch } from 'react-icons/fa';
-import { BsSearch } from 'react-icons/bs'
 import { setSearchTermState } from '../redux/search/searchSlice'
 import { Card } from "flowbite-react";
 
@@ -107,8 +106,7 @@ const Profile = () => {
   const [uploadingPerc, setUploadingPerc] = useState(0);
   const [fileUploadError, setFileUploadError] = useState(false);
   const [formData, setFormData] = useState({});
-  // const dispatch = useDispatch();
-  // const navigate = useNavigate();
+
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
@@ -401,6 +399,7 @@ const Profile = () => {
                     onClick={() => fileRef.current.click()}
                     className="h-20 w-20 mb-3 rounded-full border-[1px]  border-[#3A5A40]"
                     alt="profile image"
+                    loading="lazy"
                   />
                   <i className="h-4 w-4 rounded-full flex items-center justify-center bg-[#3A5A40] text-white absolute bottom-2 right-0">
                     <AiFillEdit />
@@ -741,7 +740,7 @@ const Profile = () => {
                 {partenaires.map((partner, index) => (
                   <div key={index} className="">
                     <Card className="max-w-sm shadow-white bg-transparent border-0 mx-auto rounded-lg">
-                      <img src={partner.imgUrl[0]} alt={`Partner logo for ${partner._id}`} className="max-h-[200px] min-h-[200px] w-auto object-contain rounded-lg hover:scale-105 duration-300" />
+                      <img src={partner.imgUrl[0]} alt={`Partner logo for ${partner._id}`} loading="lazy" className="max-h-[200px] min-h-[200px] w-auto object-contain rounded-lg hover:scale-105 duration-300" />
                       <button className='px-4 py-2 bg-red-800 rounded text-white mx-5' onClick={()=>handleDeletePartenaire(partner._id)}>Effacer</button>
                     </Card>
           </div>

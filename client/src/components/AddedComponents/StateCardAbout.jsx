@@ -73,7 +73,7 @@ export default function StateCard() {
         <div className="px-10 sm:flex sm:flex-col lg:flex-row lg:grid-cols-3 bg-gradient-to-r from-gray-50 to-gray-200 rounded-[40px] h-38 gap-3 max-md:max-w-md mx-auto border-black border-1 items-center shadow-md shadow-[rgba(0,0,0,0.1)]">
         <div className="rounded-lg overflow-hidden  ">      
               <div className="pt-4 p-0 sm:p-1 md:p-2  grid grid-cols-3">
-              <img src={logement1} className='p-2 col-span-1'/>
+              <img src={logement1} className='p-2 col-span-1' alt='logement' loading="lazy"/>
               <div className=' col-span-2'>
               <h3 className="text-xs sm:text-base  md:text-lg font-semibold uppercase mb-2 ml-4 lg:mt-2 text-black">logements</h3>
               <h3 className="text-lg md:text-xl font-semibold mb-2 text-black">{displayedProjectCount}<span className='text-black'>+</span></h3>
@@ -84,7 +84,7 @@ export default function StateCard() {
 
             <div className="rounded-lg overflow-hidden">
               <div className="pt-4 p-0 sm:p-1 md:p-2   grid grid-cols-3">
-              <img src={commercial01} className='p-2 col-span-1'/>
+              <img src={commercial01} className='p-2 col-span-1' alt='commercial' loading="lazy"/>
               <div className='flex flex-col col-span-2'>
               <h3 className="text-xs sm:text-base mt-3 text-center md:text-lg font-semibold uppercase mb-2 text-black">espace commerciaux</h3>
               <h3 className="text-lg md:text-xl font-semibold mb-2 text-black">{displayedProjectCount} <span className='text-black'>+</span></h3>
@@ -95,7 +95,7 @@ export default function StateCard() {
 
             <div className="rounded-lg overflow-hidden">
               <div className="pt-4 p-0 sm:p-1 md:p-2  grid grid-cols-3">
-              <img src={parking} className='p-2 col-span-1'/>
+              <img src={parking} className='p-2 col-span-1' alt='parking' loading="lazy"/>
               <div className='flex flex-col col-span-2'>
               <h3 className="text-xs sm:text-base mt-3 text-center md:text-lg font-semibold uppercase mb-2 text-black">places parking</h3>
               <h3 className="text-lg md:text-xl font-semibold mb-2 text-black">{displayedParkingCount} <span className='text-black'>+</span></h3>

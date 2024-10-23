@@ -11,7 +11,6 @@ const TermineeProjects = () => {
   const [projectslistings, setprojectslistings] = useState([]);
   const navigate = useNavigate();
 
-  // Flèche suivante
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -27,15 +26,15 @@ const TermineeProjects = () => {
           position: "absolute",
           top: "50%",
           transform: "translateY(-50%)",
-          right: "-15px", // Ajuste la flèche de droite
-          zIndex: 1, // S'assure qu'elle reste au-dessus des cartes
+          right: "-15px",
+          zIndex: 1, 
         }}
         onClick={onClick}
       />
     );
   }
 
-  // Flèche précédente
+  
   function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -51,8 +50,8 @@ const TermineeProjects = () => {
           position: "absolute",
           top: "50%",
           transform: "translateY(-50%)",
-          left: "-15px", // Ajuste la flèche de gauche
-          zIndex: 1, // S'assure qu'elle reste au-dessus des cartes
+          left: "-15px",
+          zIndex: 1,
         }}
         onClick={onClick}
       />
@@ -88,8 +87,8 @@ const TermineeProjects = () => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    nextArrow: <SampleNextArrow />, // Utilise la flèche suivante ajustée
-    prevArrow: <SamplePrevArrow />, // Utilise la flèche précédente ajustée
+    nextArrow: <SampleNextArrow />, 
+    prevArrow: <SamplePrevArrow />, 
     autoplay: true,
     autoplaySpeed: 2000,
     appendDots: (dots) => (

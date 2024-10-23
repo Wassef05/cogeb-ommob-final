@@ -11,7 +11,6 @@ export default function ProjetFuture() {
   const [projectslistings, setprojectslistings] = useState([]);
   const navigate = useNavigate();
 
-  // Flèche suivante
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -27,15 +26,14 @@ export default function ProjetFuture() {
           position: "absolute",
           top: "50%",
           transform: "translateY(-50%)",
-          right: "-15px", // Ajuste la flèche de droite
-          zIndex: 1, // S'assure qu'elle reste au-dessus des cartes
+          right: "-15px",
+          zIndex: 1,
         }}
         onClick={onClick}
       />
     );
   }
 
-  // Flèche précédente
   function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -51,8 +49,8 @@ export default function ProjetFuture() {
           position: "absolute",
           top: "50%",
           transform: "translateY(-50%)",
-          left: "-15px", // Ajuste la flèche de gauche
-          zIndex: 1, // S'assure qu'elle reste au-dessus des cartes
+          left: "-15px", 
+          zIndex: 1,
         }}
         onClick={onClick}
       />
@@ -167,7 +165,7 @@ export default function ProjetFuture() {
                   className="group relative inline-flex items-center overflow-hidden rounded bg-[#3A5A40] px-8 py-3 text-black "
                   style={{
                     background:
-                      "linear-gradient(40deg, rgba(25,222,100,1) 0%, rgba(25,222,91,0.5466561624649859) 50%, rgba(25,222,100,1) 100%)",
+                      "linear-gradient(104deg, rgba(2,164,34,1) 0%, rgba(144,226,160,1) 40%, rgba(142,245,162,0.9445028011204482) 55%, rgba(2,164,34,1) 100%)",
                   }}
                 >
                   <span className="absolute -end-full transition-all group-hover:end-4">

@@ -4,7 +4,7 @@ import card1 from './card1.png';
 import close from './close.svg';
 import commercial01 from './commercial01.png';
 // import coverJPG from './cover.jpg';
-import coverPNG from './cover.webp';//
+import coverPNG from './cover.jpg';//
 import cover1 from './cover1.png';
 import cover1jpg from './cover1web.webp';//
 
@@ -22,7 +22,7 @@ import iwebsitewhite from './iwebsitewhite.png';
 import LCC from './LCC.jpg';
 import location1 from './location1.png';
 import logement1 from './logement1.png';
-import logo from './logo.png';
+import logo from './logo.webp';
 
 import logo1 from './logo1.png';
 // import logo2 from './logo2.png';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaBath, FaCamera, FaCheck } from 'react-icons/fa';
+import { FaCamera, FaCheck } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import 'react-quill/dist/quill.snow.css';
 
@@ -34,6 +34,7 @@ const ProjectCard = ({ projectInfo }) => {
           className="hover:scale-105 object-cover h-full w-full duration-300"
           src={imgUrl[0]}
           alt="wallpaper"
+          loading="lazy"
         />
         <div className="absolute bottom-3 left-3 inline-flex items-center rounded-sm bg-[#3A5A40] px-2 py-1 shadow-md">
           <span className="text-xs text-white uppercase font-bold">

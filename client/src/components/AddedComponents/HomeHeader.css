@@ -8,8 +8,8 @@
 }
 @media (max-width: 640px) {
   .custom-slide {
-    height: 160vh;
-    background-size:150% 75%;     
+    height: 115vh;
+    background-size:120% 75%;     
   }
 }
 @media (min-width: 319) and (max-width: 639px) {

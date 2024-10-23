@@ -131,9 +131,9 @@ const SearchProject = () => {
 
 
                                     <div className="amenities_container mb-4">
-                                        <p className='text-lg font-bold mb-2'>Amenities:</p>
+                                        <p className='text-lg font-bold mb-2'>Équipements:</p>
                                         <div className="control grid grid-cols-2 gap-2">
-                                            {['parking', 'furnished', 'bureau'].map((amenity) => (
+                                            {['parking', 'bureau'].map((amenity) => (
                                                 <label key={amenity} className="flex items-center space-x-2">
                                                     <input
                                                         type="checkbox"

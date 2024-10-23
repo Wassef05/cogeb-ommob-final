@@ -26,7 +26,7 @@ export default function NavbarComp() {
     setIsDropdownOpen(false);
   };
 
-  const location = useLocation(); // Hook pour obtenir la route actuelle
+  const location = useLocation(); 
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,9 +34,9 @@ export default function NavbarComp() {
       setScrollPosition(currentScrollPosition);
 
       if (currentScrollPosition > 0) {
-        setNavbarBackground(" bg-white-100/100 backdrop-blur-md"); // Changer de background
+        setNavbarBackground(" bg-white-100/100 backdrop-blur-md");
       } else {
-        setNavbarBackground("bg-transparent"); // Rétablir la transparence
+        setNavbarBackground("bg-transparent");
       }
 
       setIsNavbarVisible(currentScrollPosition < scrollPosition);
@@ -75,7 +75,6 @@ export default function NavbarComp() {
     };
   }, [dropdownRef]);
 
-  // Fonction pour appliquer des styles dynamiques, y compris pour les éléments du dropdown
   const navlinkStyles = ({ isActive }) => `
     text-black font-bold text-md sm:text-lg md:text-sm lg:text-xl md:mx-1 lg:mx-8 my-3
     transform translate-y-2 ${isActive ? 'text-green-600' : 'hover:text-[#006400]'} 
@@ -86,7 +85,6 @@ export default function NavbarComp() {
     block px-4 py-2 ${isActive ? 'text-green-600' : 'hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white'}
   `;
 
-  // Vérifier si l'une des routes du dropdown "NOS PROJETS" est active
   const isNosProjetsActive = location.pathname.includes('/searchProject');
 
   return (
@@ -101,7 +99,7 @@ export default function NavbarComp() {
             src={logo}
             className={`relative mr-3 h-16 sm:h-32 md:h-28 lg:h-20 ml-10 transition-transform duration-300 ${scrollPosition > 0 ? 'scale-90' : 'scale-100'}`} // Adjust height and scaling
             alt="nom"
-          />
+            loading="eager"          />
         </Navbar.Brand>
 
         <div className="flex sm:mr-1 items-center md:order-2">
@@ -114,7 +112,7 @@ export default function NavbarComp() {
           )}
 
           <button className="block md:hidden m-4" onClick={handleToggle}>
-            <img src={toggle ? close : hamburgerMenu} alt="menu" className="h-16 w-6 " />
+            <img src={toggle ? close : hamburgerMenu} alt="menu" className="h-16 w-6 " loading="lazy" />
           </button>
         </div>
 

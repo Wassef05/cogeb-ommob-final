@@ -9,6 +9,8 @@ const authRouter = require("../routes/auth.route");
 const projectRouter = require("../routes/project.route");
 const partnerRouter = require("../routes/partner.route");
 
+const compression = require('compression');
+
 dotenv.config();
 
 const mongoUri = process.env.MONGO_URI; 
@@ -16,8 +18,10 @@ const NODE_ENV = process.env.NODE_ENV || "production";
 const PORT = process.env.PORT || 4000;
 
 const app = express();
+app.use(compression());
 app.use(express.json());
 app.use(cookieParser());
+
 
 
 app.use(cors({

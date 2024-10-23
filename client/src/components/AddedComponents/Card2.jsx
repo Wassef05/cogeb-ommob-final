@@ -11,7 +11,6 @@ export default function Card2() {
   return (
       <div className="bg-gradient-to-r from-slate-50 to-slate-200 sm:mt-10 mt-2 h-auto grid place-items-center max-h-full max-w-[100vw] mx-auto sm:p-16 p-4 font-[sans-serif]">
         <div className="grid md:grid-cols-2 items-center gap-4 ">
-          {/* Section Texte */}
           <div className="md:col-span-1">
             <div className="mb-12 sm:max-w-[50vw] max-w-full" data-aos="fade-right">
               <h2 className="shadow-md shadow-[rgba(0,0,0,0.3)] text-center  text-black text-xl sm:text-3xl mb-6 sm:mb-10 px-6 sm:px-10 py-4 sm:py-6 bg-gradient-to-r from-slate-100 to-slate-50 rounded-lg font-bold">
@@ -23,12 +22,13 @@ export default function Card2() {
             </div>
           </div>
           
-          {/* Section Image */}
           <div data-aos="fade-left" className="flex justify-center md:justify-end">
             <img
               src={card1}
               className="lg:h-[400px] h-[250px] sm:h-[300px] rounded-3xl shadow-[10px_-10px_10px_rgba(0,0,0,0.1)]"
               alt="Profile"
+              loading="lazy" 
+
             />
           </div>
         </div>

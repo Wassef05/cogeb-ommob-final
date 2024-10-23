@@ -32,7 +32,7 @@ export default function CoverCard() {
         style={{ borderTopRightRadius: '50px', height: '150px' }} 
       >
         <div className="textDiv text-center">
-          <h1 className="deutschlands-font text-bright mobile-slogan fixed-height-text">  {/* Classe pour hauteur fixe */}
+          <h1 className="deutschlands-font text-bright mobile-slogan fixed-height-text"> 
             <span className="baraka">
               {text.split('\n').map((line, index) => (
                 <React.Fragment key={index}>

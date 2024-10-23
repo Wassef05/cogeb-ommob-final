@@ -7,8 +7,12 @@ export default function Card3() {
   return (
     <div className='mt-10'>
       <div className="relative w-5/6 mx-auto font-sans max-h-80 rounded-lg overflow-hidden before:absolute before:w-full before:h-max-h-72 before:inset-0 before:bg-[#1a412e] before:opacity-30 before:z-10 shadow-lg shadow-[rgba(0,0,0,0.6)]">
-        <img src={bg} className="absolute inset-0 w-full h-80 object-cover" alt="Biglogo"/>
-
+      <img 
+          src={bg} 
+          className="absolute inset-0 w-full h-80 object-cover" 
+          alt="Biglogo" 
+          loading="lazy" 
+        />
         <div className="min-h-[350px] relative z-30 h-max-h-72 max-w-6xl mx-auto flex flex-col justify-center items-center text-center text-white p-6 rounded-lg">
         <p className="sm:text-2xl text-base text-center text-white">NOTRE DERNIER PROJET</p>
 

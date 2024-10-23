@@ -14,7 +14,7 @@ export default function Form() {
 
     useEffect(() => {
         AOS.init({
-            duration: 1200, // Animation duration
+            duration: 1200,
         });
     }, []);
 

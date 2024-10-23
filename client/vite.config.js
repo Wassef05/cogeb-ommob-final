@@ -1,33 +1,42 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import compression from 'vite-plugin-compression';
 
-// https://vitejs.dev/config/
+
 export default defineConfig({
+  plugins: [
+    react(),
+    compression({ algorithm: 'brotliCompress' }) ,
+    compression({ algorithm: 'gzip' }) 
+
+  ],
+
   server: {
-    host: true, // ou '0.0.0.0'
-    port: process.env.PORT || 5173, 
-    strictPort: true, // Important pour forcer Vite à utiliser ce port
+    host: true,
+    port: process.env.PORT || 5173,
+    strictPort: true,
     proxy: {
       '/api': {
-        // target: 'https://cogeb-immobiliere-api.onrender.com',
-        // target: 'http://localhost:4000',
         target: 'http://localhost:4000',
-
-
-        changeOrigin: true, 
+        changeOrigin: true,
         secure: false,
       },
     },
   },
-  plugins: [react()],
+
   build: {
-    chunkSizeWarningLimit: 1000, 
+    chunkSizeWarningLimit: 1000,
+    minify: 'terser',
+  terserOptions: {
+    compress: {
+      drop_console: true, 
+    },
+  },
     rollupOptions: {
       output: {
-       // Séparation des dépendances principales en un chunk séparé
         manualChunks(id) {
           if (id.includes('node_modules')) {
-            return 'vendor'; // Créer un chunk 'vendor' pour les modules externes
+            return 'vendor';
           }
         },
       },

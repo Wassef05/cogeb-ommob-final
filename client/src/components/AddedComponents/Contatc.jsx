@@ -15,34 +15,34 @@ export default function Contact() {
 
         {/* Case 1 */}
         <div className="py-4 text-base w-full h-full bg-gradient-to-r from-gray-100 to-gray-200 rounded-2xl shadow-lg flex flex-col justify-center items-center">
-          <img src={email1} className="w-10 h-8 mb-2" alt="email icon" />
+          <img src={email1} className="w-10 h-8 mb-2"
+           alt="email icon" 
+           loading="lazy" 
+          />
           <div className="text-center font-bold">
             <h3 className="text-black">E-mail</h3>
             <p className="text-black text-sm sm:text-base">contact@cogeb-immobiliere.com</p>
           </div>
         </div>
 
-        {/* Case 2 */}
         <div className="py-4 text-base w-full h-full bg-gradient-to-r from-gray-100 to-gray-200 rounded-2xl shadow-lg flex flex-col justify-center items-center">
-          <img src={phone1} className="w-8 h-8 mb-2" alt="phone icon" />
+          <img src={phone1} className="w-8 h-8 mb-2" alt="phone icon" loading="lazy"  />
           <div className="text-center font-bold">
             <h3 className="text-black">TELEPHONE</h3>
             <p className="text-black text-sm sm:text-base">+216 73 323 435</p>
           </div>
         </div>
 
-        {/* Case 3 */}
         <div className="py-4 text-base w-full h-full bg-gradient-to-r from-gray-100 to-gray-200 rounded-2xl shadow-lg flex flex-col justify-center items-center">
-          <img src={webe1} className="w-8 h-8 mb-2" alt="website icon" />
+          <img src={webe1} className="w-8 h-8 mb-2" alt="website icon" loading="lazy"/>
           <div className="text-center font-bold">
             <h3 className="text-black">Site Web</h3>
             <p className="text-black text-sm sm:text-base">Cogeb-immobiliére.com</p>
           </div>
         </div>
 
-        {/* Case 4 */}
         <div className="py-4 text-base w-full h-full bg-gradient-to-r from-gray-100 to-gray-200 rounded-2xl shadow-lg flex flex-col justify-center items-center">
-          <img src={location1} className="w-8 h-8 mb-2" alt="location icon" />
+          <img src={location1} className="w-8 h-8 mb-2" alt="location icon" loading="lazy" />
           <div className="text-center font-bold">
             <h3 className="text-black">Adresse</h3>
             <p className="text-black text-sm sm:text-base">

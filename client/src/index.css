@@ -22,12 +22,10 @@ body {
   @apply absolute  right-0 bg-brand-blue h-full w-10 sm:w-14 sm:max-w-[56px] rounded-e-md max-w-[40px] flex items-center justify-center hover:bg-brand-blue/80 duration-300;
 }
 
-/*=================Form styles start here =========== */
 .form_input {
   @apply py-2 border-0 border-b-[1px] border-slate-300 placeholder:font-content placeholder:font-medium placeholder:text-sm  focus:border-brand-blue focus:outline-none px-2 w-full text-sm text-slate-900 font-content font-semibold;
 }
 
-/*========tostify design==========*/
 .Toastify__toast {
   @apply bg-brand-blue;
 }
