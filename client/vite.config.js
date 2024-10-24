@@ -1,14 +1,20 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import compression from 'vite-plugin-compression';
-
+import viteCompression from 'vite-plugin-compression';
 
 export default defineConfig({
   plugins: [
     react(),
-    compression({ algorithm: 'brotliCompress' }) ,
-    compression({ algorithm: 'gzip' }) 
-
+    viteCompression({
+      algorithm: 'gzip',
+      ext: '.gz',
+      threshold: 10240, // Seuil pour la compression, ici 10KB
+    }),
+    viteCompression({
+      algorithm: 'brotliCompress',
+      ext: '.br',
+      threshold: 10240,
+    }),
   ],
 
   server: {
@@ -26,12 +32,8 @@ export default defineConfig({
 
   build: {
     chunkSizeWarningLimit: 1000,
-    minify: 'terser',
-  terserOptions: {
-    compress: {
-      drop_console: true, 
-    },
-  },
+    target: 'esnext',
+    minify: 'esbuild',
     rollupOptions: {
       output: {
         manualChunks(id) {

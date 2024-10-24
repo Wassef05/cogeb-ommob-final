@@ -3,8 +3,7 @@ import React, { useEffect, useState } from "react";
 import ProjectListingCard from "../components/ProjectListingCard";
 import SkletonLoading from "./SkletonLoading";
 import { useNavigate } from "react-router-dom";
-import AOS from "aos";
-import "aos/dist/aos.css";
+
 
 const TermineeProjects = () => {
   const [loading, setLoading] = useState(true);
@@ -57,10 +56,6 @@ const TermineeProjects = () => {
       />
     );
   }
-
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
 
   useEffect(() => {
     (async () => {
@@ -135,12 +130,11 @@ const TermineeProjects = () => {
     <section>
       <div
         className="mx-auto space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8"
-        data-aos="fade-up"
+       
       >
         <div className="content">
           <h2
             className="text-xl  sm:text-3xl font-bold  text-[#515557] sm:text-left "
-            data-aos="fade-down"
           >
             NOS PROJETS RÉALISÉS
           </h2>
@@ -154,12 +148,12 @@ const TermineeProjects = () => {
               <Slider {...settings} className="z-10 relative gap-3">
                 {projectslistings &&
                   projectslistings.map((project, index) => (
-                    <div key={project._id} data-aos="fade-up" data-aos-delay={index * 100}>
+                    <div key={project._id} >
                       <ProjectListingCard project={project} />
                     </div>
                   ))}
               </Slider>
-              <div className="text-center pt-6" data-aos="fade-up" data-aos-delay="200">
+              <div className="text-center pt-6" >
                 <button
                   onClick={() => navigate("/searchProject?filter=terminee")}
                   className="group relative inline-flex items-center overflow-hidden rounded bg-[#3A5A40] px-8 py-3 text-black "

@@ -2,48 +2,42 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./src/img/logo.webp" />
+    <link rel="icon" type="image/webp" href="./src/img/logo.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-      <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-    <link
-      rel="shortcut icon"
-      href="https://img.icons8.com/sf-black-filled/128/313a67/home.png"
-      type="image/x-icon"
-    />
-
-    <link fetchpriority="high" rel="preload" href="./src/img/cover1web.webp" as="image">
-    <link fetchpriority="high" rel="preload" href="./src/img/cover.jpg" as="image">
-
-    <link fetchpriority="high" rel="preload" href="./src/img/cover2.webp" as="image">
-    <link fetchpriority="high" rel="preload" href="./src/img/logo.webp" as="image">
-
-
+    <link rel="preload" href="./src/img/cover1web.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" href="./src/img/cover.webp" as="image" type="image/webp">
+    <link rel="preload" href="./src/img/cover2.webp" as="image" type="image/webp">
+    <link rel="preload" href="./src/img/logo.webp" as="image" type="image/webp">
 
     <script type="text/javascript">
-			;(function (l) {
-				if (l.search[1] === "/") {
-					var decoded = l.search
-						.slice(1)
-						.split("&")
-						.map(function (s) {
-							return s.replace(/and/g, "&")
-						})
-						.join("?")
-					window.history.replaceState(
-						null,
-						null,
-						l.pathname.slice(0, -1) + decoded + l.hash
-					)
-				}
-			})(window.location)
-		</script>
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/and/g, "&")
+            })
+            .join("?")
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          )
+        }
+      })(window.location)
+    </script>
+
     <title>cogeb-immobiliere</title>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+
+    <script type="module" src="/src/main.jsx" defer></script>
   </body>
 </html>

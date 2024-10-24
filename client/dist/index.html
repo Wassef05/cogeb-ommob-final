@@ -2,52 +2,46 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/assets/logo-e17a09a4.webp" />
+    <link rel="icon" type="image/webp" href="/assets/logo-e17a09a4.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-      <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-    <link
-      rel="shortcut icon"
-      href="https://img.icons8.com/sf-black-filled/128/313a67/home.png"
-      type="image/x-icon"
-    />
-
-    <link fetchpriority="high" rel="preload" href="/assets/cover1web-896fc463.webp" as="image">
-    <link fetchpriority="high" rel="preload" href="/assets/cover-885854bf.jpg" as="image">
-
-    <link fetchpriority="high" rel="preload" href="/assets/cover2-44b9bcfc.webp" as="image">
-    <link fetchpriority="high" rel="preload" href="/assets/logo-e17a09a4.webp" as="image">
-
-
+    <link rel="preload" href="/assets/cover1web-48b30f93.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" href="/assets/cover-73bfee90.webp" as="image" type="image/webp">
+    <link rel="preload" href="/assets/cover2-66f4c9b1.webp" as="image" type="image/webp">
+    <link rel="preload" href="/assets/logo-e17a09a4.webp" as="image" type="image/webp">
 
     <script type="text/javascript">
-			;(function (l) {
-				if (l.search[1] === "/") {
-					var decoded = l.search
-						.slice(1)
-						.split("&")
-						.map(function (s) {
-							return s.replace(/and/g, "&")
-						})
-						.join("?")
-					window.history.replaceState(
-						null,
-						null,
-						l.pathname.slice(0, -1) + decoded + l.hash
-					)
-				}
-			})(window.location)
-		</script>
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/and/g, "&")
+            })
+            .join("?")
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          )
+        }
+      })(window.location)
+    </script>
+
     <title>cogeb-immobiliere</title>
-    <script type="module" crossorigin src="/assets/index-b1f8d56a.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/vendor-ea00a4ff.js">
-    <link rel="stylesheet" href="/assets/vendor-7fbad150.css">
-    <link rel="stylesheet" href="/assets/index-a5001278.css">
+    <script type="module" crossorigin src="/assets/index-556eb217.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/vendor-7b6aa3ad.js">
+    <link rel="stylesheet" href="/assets/vendor-3b590169.css">
+    <link rel="stylesheet" href="/assets/index-e8be915e.css">
   </head>
   <body>
     <div id="root"></div>
+
     
   </body>
 </html>

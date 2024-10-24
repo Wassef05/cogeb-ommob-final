@@ -1,17 +1,9 @@
 import React, { useEffect } from "react";
 import{cover1jpg}  from "../../img";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import StateCard from "./StateCardAbout";
 
 const AboutHeader = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-    });
-  }, []);
+
 
   return (
     <div>
@@ -33,8 +25,7 @@ const AboutHeader = () => {
       <div className="grid items-center justify-center mb-16 mx-auto max-w-[70vw] sm:max-w-[80vw] lg:grid-cols-3 gap-4 z-20 relative lg:left-16 max-lg:px-4">
         <div
           className="flex flex-auto items-center justify-center"
-          data-aos="fade-up"
-          data-aos-delay="200"
+
         ></div>
       </div>
     </div>

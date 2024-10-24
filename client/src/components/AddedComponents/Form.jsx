@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
 
 export default function Form() {
     const [formData, setFormData] = useState({
@@ -12,11 +11,7 @@ export default function Form() {
         message: '',
     });
 
-    useEffect(() => {
-        AOS.init({
-            duration: 1200,
-        });
-    }, []);
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -48,10 +43,10 @@ export default function Form() {
         <div>
             <div
                 className="grid md:grid-cols-2 gap-6 items-center relative overflow-hidden p-8 shadow-lg rounded-3xl max-w-6xl mx-auto bg-white mt-4 font-[sans-serif] before:absolute before:right-0 before:w-[300px] before:h-full max-md:before:hidden"
-                data-aos="fade-up"
+              
             >
                 <div>
-                    <form onSubmit={handleSubmit} data-aos="fade-right">
+                    <form onSubmit={handleSubmit} >
                         <div className="space-y-4 mt-8">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
@@ -108,7 +103,7 @@ export default function Form() {
                                 value={formData.message}
                                 onChange={handleChange}
                                 className="px-4 py-2.5 rounded-md bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-[#0B4F48] outline-none"
-                                data-aos="fade-left"
+                                
                             ></textarea>
                         </div>
                         <button type="submit"
@@ -116,7 +111,7 @@ export default function Form() {
                             style={{
                                 background: "linear-gradient(40deg, rgba(25,222,100,1) 0%, rgba(25,222,91,0.5466561624649859) 50%, rgba(25,222,100,1) 100%)"
                               }}
-                            data-aos="zoom-in"
+                            
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill='#000000' className="mr-2"
                                 viewBox="0 0 548.244 548.244">
@@ -128,7 +123,7 @@ export default function Form() {
                         </button>
                     </form>
                 </div>
-                <div className="z-10 relative h-full max-md:min-h-[350px]" data-aos="fade-up">
+                <div className="z-10 relative h-full max-md:min-h-[350px]" >
                     <iframe
                         src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=RJ8V+VMX,%20Av.%20Hedi%20Nouira,%20Sousse+(COGEB)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                         className="left-0 top-0 h-full w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg"
