@@ -59,7 +59,7 @@ const Profile = () => {
               };
               console.log("Data to be sent:", updatedPartnerData);
   
-              const res = await fetch("http://localhost:4000/api/partners", {
+              const res = await fetch("https://us-central1-cogeb-immobiliere.cloudfunctions.net/api/api/partners", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(updatedPartnerData),
@@ -264,7 +264,7 @@ const Profile = () => {
     try {
       setUserProjectLoading(true);
       const res = await fetch(
-        `http://localhost:4000/api/projects/search?searchTerm=${searchTermState}&etat=${formState.etat}&parking=${formState.parking}&furnished=${formState.furnished}&bureau=${formState.bureau}&page=${pageCount}`
+        `https://us-central1-cogeb-immobiliere.cloudfunctions.net/api/api/projects/search?searchTerm=${searchTermState}&etat=${formState.etat}&parking=${formState.parking}&furnished=${formState.furnished}&bureau=${formState.bureau}&page=${pageCount}`
       );
       const data = await res.json();
       if (data.success === false) {
@@ -296,7 +296,7 @@ const Profile = () => {
   const loadPartenaires = async () => {
     try {
       const res = await fetch(
-        `http://localhost:4000/api/partners/`
+        `https://us-central1-cogeb-immobiliere.cloudfunctions.net/api/api/partners/`
       );
       const data = await res.json();
         setPartenaires(
@@ -334,7 +334,7 @@ const Profile = () => {
 
   const handleProjectDelete = async (projectId) => {
     try {
-      const res = await fetch(`http://localhost:4000/api/projects/${projectId}`, {
+      const res = await fetch(`https://us-central1-cogeb-immobiliere.cloudfunctions.net/api/api/projects/${projectId}`, {
         method: "DELETE",
       });
       const data = await res.json();

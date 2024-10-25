@@ -61,7 +61,7 @@ const Projects = () => {
         (async () => {
             try {
                 setLoading(true)
-                const res = await fetch(`http://localhost:4000/api/projects/`)
+                const res = await fetch(`https://us-central1-cogeb-immobiliere.cloudfunctions.net/api/api/projects/`)
                 const json = await res.json()
                 if (json.success === false) {
                     setLoading(false)

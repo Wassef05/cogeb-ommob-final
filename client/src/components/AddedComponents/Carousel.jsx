@@ -8,7 +8,7 @@ export default function Carousel() {
   useEffect(() => {
     const fetchPartners = async () => {
       try {
-        const response = await fetch("http://localhost:4000/api/partners");
+        const response = await fetch("https://us-central1-cogeb-immobiliere.cloudfunctions.net/api/api/partners");
         const data = await response.json();
         setPartners(data);
       } catch (error) {

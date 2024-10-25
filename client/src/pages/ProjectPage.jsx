@@ -37,7 +37,7 @@ const ProjectPage = () => {
     (async () => {
       setLoading(true);
       const res = await fetch(
-        `http://localhost:4000/api/projects/${params.id}`
+        `https://us-central1-cogeb-immobiliere.cloudfunctions.net/api/api/projects/${params.id}`
       );
       const json = await res.json();
       if (json.success === false) {
@@ -91,7 +91,7 @@ const ProjectPage = () => {
   const handleProjectDelete = async (projectId) => {
     try {
       const res = await fetch(
-        `http://localhost:4000/api/projects/${projectId}`,
+        `https://us-central1-cogeb-immobiliere.cloudfunctions.net/api/api/projects/${projectId}`,
         {
           method: "DELETE",
         }

@@ -62,7 +62,7 @@ const EnCoursProjects = () => {
     (async () => {
       try {
         setLoading(true);
-        const res = await fetch(`http://localhost:4000/api/projects/search?etat=en cours`);
+        const res = await fetch(`https://us-central1-cogeb-immobiliere.cloudfunctions.net/api/api/projects/search?etat=en cours`);
         const json = await res.json();
         if (json.success === false) {
           setLoading(false);

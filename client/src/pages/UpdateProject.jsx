@@ -52,7 +52,7 @@ const UpdateProject = () => {
         const getProjectInfo = async () => {
 
             setDataLoading(true)
-            const res = await fetch(`http://localhost:4000/api/projects/${params.id}`)
+            const res = await fetch(`https://us-central1-cogeb-immobiliere.cloudfunctions.net/api/api/projects/${params.id}`)
             const data = await res.json();
 
             if (data.success === false) {
@@ -151,7 +151,7 @@ const UpdateProject = () => {
     const handleFormSubmit = async (data) => {
         try {
             setFormSubmitLoading(true)
-            const res = await fetch(`http://localhost:4000/api/projects/${params.id}`, {
+            const res = await fetch(`https://us-central1-cogeb-immobiliere.cloudfunctions.net/api/api/projects/${params.id}`, {
                 method: 'PUT',
                 headers: {
                     "Content-Type": 'application/json'

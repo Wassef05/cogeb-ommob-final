@@ -9,7 +9,7 @@ import {parking} from "../../img"
 
 const fetchProjectCount = async () => {
   try {
-    const response = await axios.get('http://localhost:4000/api/projects/count');
+    const response = await axios.get('https://us-central1-cogeb-immobiliere.cloudfunctions.net/api/api/projects/count');
     return response.data.count;
   } catch (error) {
     console.error("Erreur lors de la récupération du nombre de projets", error);
@@ -21,7 +21,7 @@ const fetchProjectCount = async () => {
 
 const fetchProjectParkingCount = async () => {
   try {
-    const response = await axios.get('http://localhost:4000/api/projects/countParking');
+    const response = await axios.get('https://us-central1-cogeb-immobiliere.cloudfunctions.net/api/api/projects/countParking');
     return response.data.count;
   } catch (error) {
     console.error("Erreur lors de la récupération du nombre de parkings projets", error);

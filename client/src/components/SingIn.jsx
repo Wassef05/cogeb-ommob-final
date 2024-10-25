@@ -24,7 +24,7 @@ const SingIn = () => {
     const onSubmit = async (formData) => {
         dispatch(loddingStart())
         try {
-            const res = await fetch('http://localhost:4000/api/auth/signin', {
+            const res = await fetch('https://us-central1-cogeb-immobiliere.cloudfunctions.net/api/api/auth/signin', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
