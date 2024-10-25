@@ -8,7 +8,7 @@ export default defineConfig({
     viteCompression({
       algorithm: 'gzip',
       ext: '.gz',
-      threshold: 10240, // Seuil pour la compression, ici 10KB
+      threshold: 10240,
     }),
     viteCompression({
       algorithm: 'brotliCompress',

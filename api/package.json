@@ -2,11 +2,11 @@
   "name": "COGEB",
   "version": "1.0.0",
   "description": "",
-  "main": "function/api.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon functions/api.js",
-    "start": "node functions/api.js",
+    "dev": "nodemon index.js",
+    "start": "node index.js",
     "build": "netlify deploy --prod"
   },
   "keywords": [],
