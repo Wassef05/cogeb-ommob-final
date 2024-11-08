@@ -19,6 +19,9 @@ const signup = async (req, res, next) => {
 const signin = async (req, res, next) => {
   const { email, userPassword } = req.body;
   try {
+    if (!email || !userPassword) {
+      return next(throwError(400, "Email and password are required"));
+    } 
     const validUser = await User.findOne({ email });
     if (!validUser || !bcrypt.compareSync(userPassword, validUser.password)) {
       return next(throwError(401, "Wrong Credentials!"));

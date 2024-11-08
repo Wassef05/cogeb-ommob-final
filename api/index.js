@@ -12,7 +12,6 @@ const path = require('path');
 const compression = require('compression');
 
 dotenv.config();
-
 const mongoUri = process.env.MONGO_URI; 
 const NODE_ENV = process.env.NODE_ENV || "local";
 const PORT = process.env.PORT || 4000;
@@ -67,6 +66,10 @@ app.use("/api/users", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/projects", projectRouter);
 app.use("/api/partners", partnerRouter);
+
+app.get('/', (req, res) => {
+  res.send('Bienvenue sur mon backend project immobilier');
+});
 
 app.use((err, req, res, next) => {
   console.error(err);
