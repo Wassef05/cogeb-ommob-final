@@ -1,0 +1,123 @@
+{
+  "navbar": {
+    "home": "HOME",
+    "about": "ABOUT",
+    "projects": "OUR PROJECTS",
+    "contact": "CONTACT",
+    "admin": "ADMIN",
+    "completedProjects": "Completed Projects",
+    "ongoingProjects": "Ongoing Projects",
+    "futureProjects": "Future Projects",
+    "language": "Language"
+  },
+
+  "card1": {
+    "aboutUs": "ABOUT US",
+    "description1": "The company",
+    "cogebImmobiliere": "COGEB IMMOBILIERE",
+    "description2": ", founded in 1999 and led by Mr.",
+    "mohamedLazreg": "Mohamed LAZREG",
+    "description3": ", is approved by the Ministry of Equipment, Habitat, and Land Development. Its main goal is to develop high-quality real estate projects by carefully selecting sites, designing spaces that meet customer needs, and ensuring an improved living environment. It has a competent team, including architects, engineering offices, and control bureaus, who pay special attention to the architecture of its buildings, which have become references in the field."
+  },
+  "homeHeader": {
+    "slogan": "Invest smartly\n with Cogeb Real Estate"
+  },
+  "projects": {
+    "realizedProjects": "OUR COMPLETED PROJECTS",
+    "inProgressTitle": "OUR ONGOING PROJECTS",
+    "nos_futurs_projets": "OUR FUTURE PROJECTS",
+    "viewMore": "See More"
+
+  },
+  "card2": {
+    "objective": "OBJECTIVE OF THE COMPANY",
+    "description1": "The company",
+    "cogebImmobiliere": "COGEB IMMOBILIERE",
+    "description2": ", founded in 1999 and led by Mr.",
+    "mohamedLazreg": "Mohamed LAZREG",
+    "description3": ", is approved by the Ministry of Equipment, Habitat, and Land Development. Its main goal is to develop high-quality real estate projects by carefully selecting sites, designing spaces that meet customer needs, and ensuring an improved living environment. It has a competent team, including architects, engineering offices, and control bureaus, who pay special attention to the architecture of its buildings, which have become references in the field."
+  },
+  "album": {
+    "bestLocations": "Best locations for an ideal life.",
+    "modernArchitecture": "Modern architecture for true well-being.",
+    "imageAlt": "Image {{index}}"
+  },
+  "card3": {
+    "lastProject": "OUR LATEST PROJECT",
+    "discoverProjects": "YOU CAN DISCOVER WITH US THE LATEST PROJECTS REALIZED",
+    "discover": "DISCOVER"
+  },
+  "stateCard": {
+    "housing": "housing",
+    "commercialSpaces": "commercial spaces",
+    "parkingSpaces": "parking spaces"
+  },
+  "contact": {
+    "title": "CONTACT",
+    "email": "E-mail",
+    "phone": "PHONE",
+    "website": "Website",
+    "address": "Address"
+  },
+  "footer": {
+    "vision": "Our vision is to provide reliable tools for limitless creations.",
+    "links": "Links",
+    "home": "HOME",
+    "about": "ABOUT",
+    "projects": "OUR PROJECTS",
+    "contact": "CONTACT",
+    "contactTitle": "Contact",
+    "address": "Avenue de l'environnement, Sousse, Tunisia, 4000",
+    "followUs": "Follow Us",
+    "stayConnected": "Stay connected with us for updates and exclusive offers.",
+    "copyright": "© Copyright",
+    "rightsReserved": "all rights reserved"
+  },
+  "card1about": {
+    "aboutUs": "ABOUT US",
+    "description1": "The company",
+    "cogebImmobiliere": "COGEB IMMOBILIERE",
+    "description2": ", founded in 1999 and led by Mr.",
+    "mohamedLazreg": "Mohamed LAZREG",
+    "description3": ", is approved by the Ministry of Equipment, Habitat, and Land Development. Its main goal is to develop high-quality real estate projects by carefully selecting sites, designing spaces that meet customer needs, and ensuring an improved living environment. It has a competent team, including architects, engineering offices, and control bureaus, who pay special attention to the architecture of its buildings, which have become references in the field."
+  },
+  "allproject": {
+    "projectsTitle": "OUR PROJECTS",
+    "seeMore": "See more"
+},
+
+ "newsletter": {
+    "placeholder": "EMAIL",
+    "submit": "SEND"
+ },
+ "contactHeader": {
+  "visitOffice": "Visit the Office",
+  "address": "Route de l'environnement 4000, Sousse, Tunisia",
+  "email": "E-MAIL",
+  "emailAddress": "contact@cogeb-immobiliere.com",
+  "chatWithUs": "Chat with Us",
+  "website": "www.Cogeb-immobiliere.com"
+},
+"form": {
+    "nameLabel": "FULL NAME",
+    "emailLabel": "EMAIL",
+    "phoneLabel": "PHONE",
+    "projectLabel": "PROJECT",
+    "messagePlaceholder": "Message",
+    "submitButton": "Send Message"
+  },
+  "search": {
+    "placeholder": "Search...",
+    "clear_search": "Clear Search",
+    "type": "Type:",
+    "all": "All",
+    "future": "Future",
+    "en_cours": "In Progress",
+    "terminee": "Completed",
+    "amenities": "Amenities:",
+    "parking": "Parking",
+    "bureau": "Office",
+    "no_results": "Sorry, no listings found",
+    "searching": "Searching..."
+  }
+}

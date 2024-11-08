@@ -29,6 +29,8 @@ import logo1 from './logo1.png';
 import parking from './parking.webp';
 import phone1 from './phone1.webp';
 import webe1 from './webe1.webp';
+import eng from './eng.jpg'
+import fr from './fr.jpg'
 
 
 // Exportation de toutes les images
@@ -62,5 +64,6 @@ export {
   parking,
   phone1,
   webe1,
-  
+  eng,
+  fr
 };

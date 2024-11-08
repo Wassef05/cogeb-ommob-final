@@ -23,7 +23,7 @@ export default defineConfig({
     strictPort: true,
     proxy: {
       '/api': {
-        target: 'https://us-central1-cogeb-immobiliere.cloudfunctions.net/api',
+        target: 'https://immob-back.onrender.com',
         changeOrigin: true,
         secure: false,
       },
@@ -31,7 +31,7 @@ export default defineConfig({
   },
 
   build: {
-    chunkSizeWarningLimit: 1000,
+    chunkSizeWarningLimit: 2000,
     target: 'esnext',
     minify: 'esbuild',
     rollupOptions: {

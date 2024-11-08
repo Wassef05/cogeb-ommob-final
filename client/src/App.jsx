@@ -9,6 +9,7 @@ import SearchProject from './pages/SearchProject';
 import NavbarComp from './components/NavbarComp';
 import ErrorBoundary from './components/ErrorBoundary';
 import React, { Suspense } from 'react';
+import '../src/i18n/i18n.js'; // Initialisation de i18next
 
 // Utilisation de React.lazy pour charger les pages asynchrones
 const Homee = React.lazy(() => import('./pages/Homee'));
@@ -20,7 +21,7 @@ function App() {
     <>
       <BrowserRouter>
         <NavbarComp />
-        <ErrorBoundary fallback={<p>Une erreur s'est produite. Veuillez réessayer plus tard.</p>}>
+        <ErrorBoundary fallback={<p>Une erreur s'est produite. Verifier votre connexion internet</p>}>
           {/* Suspense avec fallback pour afficher un indicateur de chargement */}
           <Suspense fallback={<div>Chargement...</div>}>
             <Routes>

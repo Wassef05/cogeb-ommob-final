@@ -6,8 +6,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setSearchTermState } from '../redux/search/searchSlice';
 import Footer from '../components/Footer';
 import { LuSearchX } from "react-icons/lu";
+import { useTranslation } from 'react-i18next';
 
 const SearchProject = () => {
+    const { t } = useTranslation();
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -92,7 +94,7 @@ const SearchProject = () => {
                                     <div className="form-control w-full max-w-full relative mb-6">
                                         <input
                                             type="text"
-                                            placeholder="Rechercher..."
+                                            placeholder={t('search.placeholder')}
                                             className="w-full px-4 py-3 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
                                             onChange={e => dispatch(setSearchTermState(e.target.value))}
                                             value={searchTermState}
@@ -102,36 +104,35 @@ const SearchProject = () => {
                                         </button>
                                     </div>                              
                                     <div className="fields_container mb-4">
-  <p className="text-lg font-bold mb-2">Type:</p>
-  <div className="control grid grid-cols-2 gap-2">
-    {['all', 'future', 'en cours', 'terminee'].map((type) => {
-      const labelMapping = {
-        all: 'Tous',
-        future: 'Future',
-        'en cours': 'En cours',
-        terminee: 'Termine', 
-      };
+                                        <p className="text-lg font-bold mb-2">{t('search.type')}</p>
+                                        <div className="control grid grid-cols-2 gap-2">
+                                            {['all', 'future', 'en cours', 'terminee'].map((type) => {
+                                                const labelMapping = {
+                                                    all: t('search.all'),
+                                                    future: t('search.future'),
+                                                    'en cours': t('search.en_cours'),
+                                                    terminee: t('search.terminee'), 
+                                                };
 
-      return (
-        <label key={type} className="flex items-center space-x-2">
-          <input
-            type="radio"
-            name="etat"
-            value={type}
-            className="form-radio h-4 w-4 text-green-500 transition duration-150 ease-in-out"
-            onChange={(e) => handleChange(e.target.name, e.target.value)}
-            checked={formState.etat === type}
-          />
-          <span className="text-sm">{labelMapping[type]}</span>
-        </label>
-      );
-    })}
-  </div>
-</div>
-
+                                                return (
+                                                    <label key={type} className="flex items-center space-x-2">
+                                                        <input
+                                                            type="radio"
+                                                            name="etat"
+                                                            value={type}
+                                                            className="form-radio h-4 w-4 text-green-500 transition duration-150 ease-in-out"
+                                                            onChange={(e) => handleChange(e.target.name, e.target.value)}
+                                                            checked={formState.etat === type}
+                                                        />
+                                                        <span className="text-sm">{labelMapping[type]}</span>
+                                                    </label>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
 
                                     <div className="amenities_container mb-4">
-                                        <p className='text-lg font-bold mb-2'>Équipements:</p>
+                                        <p className='text-lg font-bold mb-2'>{t('search.amenities')}</p>
                                         <div className="control grid grid-cols-2 gap-2">
                                             {['parking', 'bureau'].map((amenity) => (
                                                 <label key={amenity} className="flex items-center space-x-2">
@@ -142,7 +143,7 @@ const SearchProject = () => {
                                                         onChange={(e) => handleChange(e.target.name, e.target.checked)}
                                                         checked={formState[amenity]}
                                                     />
-                                                    <span className="text-sm">{amenity.charAt(0).toUpperCase() + amenity.slice(1)}</span>
+                                                    <span className="text-sm">{t(`search.${amenity}`)}</span>
                                                 </label>
                                             ))}
                                         </div>
@@ -155,7 +156,7 @@ const SearchProject = () => {
                                         >
                                             <span className='flex items-center justify-center font-bold text-lg'>
                                                 <FaSearch className='mr-2' />
-                                                Effacer Recherche
+                                                {t('search.clear_search')}
                                             </span>
                                         </button>
                                     </div>
@@ -167,7 +168,7 @@ const SearchProject = () => {
                             {loading ? (
                                 <div className="loading_container mt-40 flex items-center justify-center flex-col">
                                     <FaSearch className='text-green-500 text-xl' />
-                                    <p className='font-heading text-lg text-center text-green-500'>Searching...</p>
+                                    <p className='font-heading text-lg text-center text-green-500'>{t('search.searching')}...</p>
                                 </div>
                             ) : (
                                 <div>
@@ -180,7 +181,6 @@ const SearchProject = () => {
                                             </div>
                                             <div className="pagination_part mt-8 md:mt-14 w-full flex items-center justify-center">
                                                 <div className="join">
-                                                    {/* prev Btn */}
                                                     <button
                                                         onClick={() => setPageCount(pageCount - 1)}
                                                         disabled={pageCount <= 1 || loading}
@@ -194,7 +194,6 @@ const SearchProject = () => {
                                                         Page {pageCount}
                                                     </button>
 
-                                                    {/* Next Btn */}
                                                     <button
                                                         onClick={() => setPageCount(pageCount + 1)}
                                                         disabled={projects.length - ((pageCount - 1) * 12) < 12 || loading}
@@ -209,7 +208,7 @@ const SearchProject = () => {
                                     ) : (
                                         <div className="mt-40 flex items-center justify-center flex-col">
                                             <LuSearchX className='text-green-500 text-3xl' />
-                                            <p className='font-heading text-lg text-center text-green-500'>Sorry, Listings not found</p>
+                                            <p className='font-heading text-lg text-center text-green-500'>{t('search.no_results')}</p>
                                         </div>
                                     )}
                                 </div>

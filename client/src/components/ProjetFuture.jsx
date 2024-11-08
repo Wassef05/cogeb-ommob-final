@@ -3,12 +3,13 @@ import React, { useEffect, useState } from "react";
 import ProjectListingCard from "../components/ProjectListingCard";
 import SkletonLoading from "./SkletonLoading";
 import { useNavigate } from "react-router-dom";
-
+import { useTranslation } from "react-i18next"; // Import i18next
 
 export default function ProjetFuture() {
   const [loading, setLoading] = useState(true);
   const [projectslistings, setprojectslistings] = useState([]);
   const navigate = useNavigate();
+  const { t } = useTranslation(); // Hook pour récupérer les traductions
 
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -25,7 +26,7 @@ export default function ProjetFuture() {
           position: "absolute",
           top: "50%",
           transform: "translateY(-50%)",
-          right: "-15px",
+          right: "-15px", 
           zIndex: 1,
         }}
         onClick={onClick}
@@ -56,8 +57,6 @@ export default function ProjetFuture() {
     );
   }
 
-
-
   useEffect(() => {
     (async () => {
       try {
@@ -76,11 +75,10 @@ export default function ProjetFuture() {
       }
     })();
   }, []);
-  const itemCount = 3;
 
   const settings = {
     dots: true,
-    infinite: itemCount > 4,
+    infinite: projectslistings.length > 4,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -104,7 +102,7 @@ export default function ProjetFuture() {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: Math.min(3, projectslistings.length),
           slidesToScroll: 1,
           infinite: true,
           dots: true,
@@ -131,37 +129,30 @@ export default function ProjetFuture() {
   return (
     <section>
       <div
-        className="mx-auto space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8"
-
+        className="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8"
       >
         <div className="content">
           <h2
-            className="text-3xl sm:text-3xl font-bold text-[#515557] sm:text-left"
+            className="text-xl sm:text-3xl font-bold text-[#515557] sm:text-left"
           >
-            NOS FUTURS PROJETS
+            {t("projects.nos_futurs_projets")} {/* Traduction dynamique */}
           </h2>
         </div>
 
         <div className="post_container !mt-4">
-          {loading ? (
-            <SkletonLoading />
-          ) : (
+          {loading ? <SkletonLoading /> : (
             <div className="slider_container">
               <Slider {...settings} className="z-10 relative gap-3">
-                {projectslistings &&
-                  projectslistings.map((project, index) => (
-                    <div key={project._id} >
-                      <ProjectListingCard project={project} />
-                    </div>
-                  ))}
+                {projectslistings && projectslistings.map((project) => (
+                  <ProjectListingCard key={project._id} project={project} />
+                ))}
               </Slider>
-              <div className="text-center pt-6" >
+              <div className="text-center pt-6">
                 <button
-                  onClick={() => navigate("/searchProject?filter=future")}
-                  className="group relative inline-flex items-center overflow-hidden rounded bg-[#3A5A40] px-8 py-3 text-black "
+                  onClick={() => navigate("/searchProject?filter=terminee")}
+                  className="group relative inline-flex items-center overflow-hidden rounded bg-[#3A5A40] px-8 py-3 text-black"
                   style={{
-                    background:
-                      "linear-gradient(104deg, rgba(2,164,34,1) 0%, rgba(144,226,160,1) 40%, rgba(142,245,162,0.9445028011204482) 55%, rgba(2,164,34,1) 100%)",
+                    background: "linear-gradient(104deg, rgba(2,164,34,1) 0%, rgba(144,226,160,1) 40%, rgba(142,245,162,0.9445028011204482) 55%, rgba(2,164,34,1) 100%)",
                   }}
                 >
                   <span className="absolute -end-full transition-all group-hover:end-4">
@@ -181,7 +172,7 @@ export default function ProjetFuture() {
                     </svg>
                   </span>
                   <span className="text-xl transition-all group-hover:me-6">
-                    Voir plus
+                    {t("projects.viewMore")} {/* Traduction dynamique */}
                   </span>
                 </button>
               </div>

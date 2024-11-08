@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { image1, image2, image3, imageA3 } from '../img'; 
-import { FaMapMarkedAlt, FaBuilding } from 'react-icons/fa'; 
-
+import { image1, image2, image3, imageA3 } from '../img';
+import { FaMapMarkedAlt, FaBuilding } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next'; // Importer le hook de traduction
 
 const photos = [
   { src: image1 },
@@ -12,6 +12,7 @@ const photos = [
 
 export default function Album() {
   const [selectedIndex, setSelectedIndex] = useState(null);
+  const { t } = useTranslation(); // Initialiser la traduction
 
   const handleImageClick = (index) => {
     setSelectedIndex(index);
@@ -34,11 +35,11 @@ export default function Album() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12 px-4">
         <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
           <FaMapMarkedAlt className="text-4xl sm:text-5xl mb-4 text-black" />
-          <h3 className="text-xl font-semibold mb-2">Meilleurs emplacements pour une vie idéale.</h3>
+          <h3 className="text-xl font-semibold mb-2">{t('album.bestLocations')}</h3> {/* Texte traduit */}
         </div>
         <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
           <FaBuilding className="text-4xl sm:text-5xl mb-4 text-black" />
-          <h3 className="text-xl font-semibold mb-2">Architecture moderne pour un vrai bien-être.</h3>
+          <h3 className="text-xl font-semibold mb-2">{t('album.modernArchitecture')}</h3> {/* Texte traduit */}
         </div>
       </div>
 
@@ -48,7 +49,7 @@ export default function Album() {
             <img
               className="w-full h-56 object-cover cursor-pointer"
               src={photo.src}
-              alt={`Image ${index + 1}`}
+              alt={t('album.imageAlt', { index: index + 1 })}  
               onClick={() => handleImageClick(index)}
               loading="lazy"
             />
@@ -68,7 +69,7 @@ export default function Album() {
           <img
             className="max-w-full max-h-[80vh] object-contain"
             src={photos[selectedIndex].src}
-            alt={`Image ${selectedIndex + 1}`}
+            alt={t('album.imageAlt', { index: selectedIndex + 1 })}  
             loading="lazy"
           />
 

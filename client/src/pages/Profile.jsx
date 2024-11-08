@@ -59,7 +59,7 @@ const Profile = () => {
               };
               console.log("Data to be sent:", updatedPartnerData);
   
-              const res = await fetch("https://us-central1-cogeb-immobiliere.cloudfunctions.net/api/api/partners", {
+              const res = await fetch("https://immob-back.onrender.com/api/partners", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(updatedPartnerData),

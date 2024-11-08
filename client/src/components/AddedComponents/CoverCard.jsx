@@ -7,7 +7,7 @@ export default function CoverCard() {
   const navigate = useNavigate();
 
   const [text] = useTypewriter({
-    words: ["Investissez intelligemment\n avec Cogeb Immobilière"],
+    words: ["Investissez intelligement\n avec Cogeb Immobilière"],
     loop: true,
     typeSpeed: 80,
     deleteSpeed: 50,

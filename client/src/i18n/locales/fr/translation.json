@@ -1,0 +1,125 @@
+{
+  "navbar": {
+    "home": "ACCUEIL",
+    "about": "À PROPOS",
+    "projects": "NOS PROJETS",
+    "contact": "CONTACT",
+    "admin": "ADMIN",
+    "completedProjects": "Projets Réalisés",
+    "ongoingProjects": "Projet En Cours",
+    "futureProjects": "Futurs Projets",
+    "language": "Langue"
+  },
+  "card1": {
+    "aboutUs": "A PROPOS DE NOUS",
+    "description1": "La société",
+    "cogebImmobiliere": "COGEB IMMOBILIERE",
+    "description2": ", fondée en 1999 et dirigée par Monsieur",
+    "mohamedLazreg": "Mohamed LAZREG",
+    "description3": ", est agréée par le ministère de l’équipement de l’habitat et de l’aménagement du territoire. Son objectif principal est de développer des projets immobiliers de haute qualité en sélectionnant soigneusement les sites, en concevant des espaces répondant aux besoins des clients, et en garantissant un cadre de vie amélioré. Elle dispose d'une équipe compétente, notamment des architectes, bureaux d'études et de contrôle, qui accordent une attention particulière à l'architecture de ses bâtiments, devenus des références dans le domaine."
+  },
+  "homeHeader": {
+    "slogan": "Investissez intelligemment\n avec Cogeb Immobilière"
+  },
+  "projects": {
+    "realizedProjects": "NOS PROJETS RÉALISÉS",
+    "inProgressTitle": "NOS PROJETS EN COURS",
+    "nos_futurs_projets": "NOS FUTURS PROJETS",
+    "viewMore": "Voir plus"
+
+  },
+  "card2": {
+    "objective": "OBJECTIF DE LA SOCIETE",
+    "description1": "La société",
+    "cogebImmobiliere": "COGEB IMMOBILIERE",
+    "description2": ", fondée en 1999 et dirigée par Monsieur",
+    "mohamedLazreg": "Mohamed LAZREG",
+    "description3": ", est agréée par le ministère de l’équipement de l’habitat et de l’aménagement du territoire. Son objectif principal est de développer des projets immobiliers de haute qualité en sélectionnant soigneusement les sites, en concevant des espaces répondant aux besoins des clients, et en garantissant un cadre de vie amélioré. Elle dispose d'une équipe compétente, notamment des architectes, bureaux d'études et de contrôle, qui accordent une attention particulière à l'architecture de ses bâtiments, devenus des références dans le domaine."
+  },
+  "album": {
+    "bestLocations": "Meilleurs emplacements pour une vie idéale.",
+    "modernArchitecture": "Architecture moderne pour un vrai bien-être.",
+    "imageAlt": "Image {{index}}"
+  },
+  "card3": {
+    "lastProject": "NOTRE DERNIER PROJET",
+    "discoverProjects": "VOUS POUVEZ DECOUVRIR AVEC NOUS LES DERNIERS PROJETS REALISES",
+    "discover": "DECOUVRIR"
+  },
+  "stateCard": {
+    "housing": "logements",
+    "commercialSpaces": "espaces commerciaux",
+    "parkingSpaces": "places parking"
+  },
+  "contact": {
+    "title": "CONTACT",
+    "email": "E-mail",
+    "phone": "TELEPHONE",
+    "website": "Site Web",
+    "address": "Adresse"
+  },
+  "footer": {
+    "vision": "Notre vision est de fournir des outils fiables pour des créations sans limites.",
+    "links": "Liens",
+    "home": "ACCUEIL",
+    "about": "A PROPOS",
+    "projects": "NOS PROJETS",
+    "contact": "CONTACT",
+    "contactTitle": "Contact",
+    "address": "Avenue de l'environnement, Sousse, Tunisia, 4000",
+    "followUs": "Suivez-nous",
+    "stayConnected": "Restez connectés avec nous pour des mises à jour et des offres exclusives.",
+    "copyright": "© Copyright",
+    "rightsReserved": "tous droits réservés"
+  },
+  "card1about": {
+    "aboutUs": "A PROPOS DE NOUS",
+    "description1": "La société",
+    "cogebImmobiliere": "COGEB IMMOBILIERE",
+    "description2": ", fondée en 1999 et dirigée par Monsieur",
+    "mohamedLazreg": "Mohamed LAZREG",
+    "description3": ", est agréée par le ministère de l’équipement de l’habitat et de l’aménagement du territoire. Son objectif principal est de développer des projets immobiliers de haute qualité en sélectionnant soigneusement les sites, en concevant des espaces répondant aux besoins des clients, et en garantissant un cadre de vie amélioré. Elle dispose d'une équipe compétente, notamment des architectes, bureaux d'études et de contrôle, qui accordent une attention particulière à l'architecture de ses bâtiments, devenus des références dans le domaine."
+  },
+
+ "allproject": {
+    "projectsTitle": "NOS PROJETS",
+    "seeMore": "Voir plus"
+},
+"newsletter": {
+    "placeholder": "E-MAIL",
+    "submit": "ENVOYER"
+  },
+  
+    "contactHeader": {
+      "visitOffice": "Visitez le bureau",
+      "address": "Route de l'environnement 4000, Sousse, Tunisie",
+      "email": "E-MAIL",
+      "emailAddress": "contact@cogeb-immobiliere.com",
+      "chatWithUs": "Discutez avec nous",
+      "website": "www.Cogeb-immobiliere.com"
+    },
+    
+      "form": {
+        "nameLabel": "NOM ET PRENOM",
+        "emailLabel": "EMAIL",
+        "phoneLabel": "TELEPHONE",
+        "projectLabel": "PROJET",
+        "messagePlaceholder": "Message",
+        "submitButton": "Envoyer un message"
+      },
+      "search": {
+        "placeholder": "Rechercher...",
+        "clear_search": "Effacer Recherche",
+        "type": "Type:",
+        "all": "Tous",
+        "future": "Future",
+        "en_cours": "En cours",
+        "terminee": "Terminé",
+        "amenities": "Équipements:",
+        "parking": "Parking",
+        "bureau": "Bureau",
+        "no_results": "Désolé, aucune annonce trouvée",
+        "searching": "Searching..."
+      }
+
+}

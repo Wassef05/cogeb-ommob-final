@@ -4,8 +4,10 @@ import { logo } from "../img";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'; // Icônes de marque
 import { faEnvelope, faPhone, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'; // Icônes solides
+import { useTranslation } from 'react-i18next'; // Importer le hook de traduction
 
 const Footer = () => {
+  const { t } = useTranslation(); // Initialiser la traduction
   const currentYear = new Date().getFullYear();
 
   return (
@@ -16,30 +18,30 @@ const Footer = () => {
             <img src={logo} alt="logo" className="mx-auto" loading="lazy" />
           </Link>
           <p className="mt-4 text-black">
-            Notre vision est de fournir des outils fiables pour des créations sans limites.
+            {t('footer.vision')}
           </p>
         </div>
 
         <nav>
-          <h1 className="text-black text-lg font-bold mb-6">Liens</h1>
+          <h1 className="text-black text-lg font-bold mb-6">{t('footer.links')}</h1>
           <ul className="space-y-4">
             <li>
-              <Link to="/" className="text-black hover:text-black text-sm font-bold">ACCUEIL</Link>
+              <Link to="/" className="text-black hover:text-black text-sm font-bold">{t('footer.home')}</Link>
             </li>
             <li>
-              <Link to="/about" className="text-black hover:text-black text-sm font-bold">A PROPOS</Link>
+              <Link to="/about" className="text-black hover:text-black text-sm font-bold">{t('footer.about')}</Link>
             </li>
             <li>
-              <Link to="/searchProject" className="text-black hover:text-black text-sm font-bold">NOS PROJETS</Link>
+              <Link to="/searchProject" className="text-black hover:text-black text-sm font-bold">{t('footer.projects')}</Link>
             </li>
             <li>
-              <Link to="/contact" className="text-black hover:text-black text-sm font-bold">CONTACT</Link>
+              <Link to="/contact" className="text-black hover:text-black text-sm font-bold">{t('footer.contact')}</Link>
             </li>
           </ul>
         </nav>
 
         <div>
-          <h1 className="text-black text-lg font-bold mb-6">Contact</h1>
+          <h1 className="text-black text-lg font-bold mb-6">{t('footer.contactTitle')}</h1>
           <ul className="space-y-4">
             <li>
               <a href="mailto:cogebimmobiliere@gmail.com" className="text-black hover:text-black text-sm font-bold">cogebimmobiliere@gmail.com</a>
@@ -49,14 +51,14 @@ const Footer = () => {
             </li>
             <li>
               <a href="#" className="text-black hover:text-black text-sm font-bold">
-                <FontAwesomeIcon icon={faMapMarkerAlt} /> Avenue de l'environnement, Sousse, Tunisia, 4000
+                <FontAwesomeIcon icon={faMapMarkerAlt} /> {t('footer.address')}
               </a>
             </li>
           </ul>
         </div>
 
         <div>
-          <h4 className="text-black text-lg font-bold mb-6">Suivez-nous</h4>
+          <h4 className="text-black text-lg font-bold mb-6">{t('footer.followUs')}</h4>
           <div className="flex justify-center space-x-6">
             <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-black hover:text-black text-2xl">
               <FontAwesomeIcon icon={faFacebook} />
@@ -69,7 +71,7 @@ const Footer = () => {
             </a>
           </div>
           <p className="mt-4 text-sm text-black">
-            Restez connectés avec nous pour des mises à jour et des offres exclusives.
+            {t('footer.stayConnected')}
           </p>
           <div className="flex justify-center space-x-6 mt-4">
             <a href="https://wa.me/21673323435" target="_blank" rel="noopener noreferrer" className="text-black hover:text-black text-2xl">
@@ -83,7 +85,7 @@ const Footer = () => {
       </div>
 
       <p className="text-black-300 text-center text-sm mt-10">
-        © Copyright {currentYear} by cogeb-immobiliere. All rights reserved.
+        © {t('footer.copyright')} {currentYear} {t('footer.rightsReserved')}
       </p>
     </footer>
   );
